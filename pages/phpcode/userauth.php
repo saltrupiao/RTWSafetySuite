@@ -24,6 +24,7 @@
          header("location: home.php");
       }else {
          $error = "Your Login Name or Password is invalid";
+         echo "<h1>Invalid Credentials</h1>";
       }
    }
 ?>
