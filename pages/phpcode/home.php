@@ -10,10 +10,5 @@ if($_SESSION['login_user']){
 }
 
 //html 
-echo "<html lang=''>";
-echo "<b>Welcome to COVID Safety Suite</b>";
-echo "<br><br>";
-//design link to look like button later
-echo "<a href=logout.php>Logout</a>";
-echo "</html>";
+echo "Hello World";
 ?>
