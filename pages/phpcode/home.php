@@ -6,7 +6,7 @@ if($_SESSION['login_user']){
     echo "Welcome " . $_SESSION["login_user"];
 }else{
     //stays at login page if session not created
-    header("location:login.html");
+    header("location: login.html");
 }
 
 //html 

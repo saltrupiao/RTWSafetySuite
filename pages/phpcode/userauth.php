@@ -1,9 +1,16 @@
 <?php
    session_start();
-   include_once 'connection.php';
+    //include_once 'connection.php';
+    //server database
+    $serverName = "35.223.86.91";
+    $userName = "user";
+    $password = "oakland";
+    $dbName = "rtwdb";
+    // Create connection
+    $conn = mysqli_connect($serverName, $userName , $password, $dbName);
    if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      $myusername = mysqli_real_escape_string($conn,$_POST['Username']);
+      // username and password sent from form
+       $myusername = mysqli_real_escape_string($conn,$_POST['Username']);
       $mypassword = mysqli_real_escape_string($conn,$_POST['Password']); 
       $sql = "SELECT EMP_USERID, EMP_PW FROM employee WHERE EMP_USERID = '$myusername' and EMP_PW = '$mypassword'";
       $result = mysqli_query($conn,$sql);
