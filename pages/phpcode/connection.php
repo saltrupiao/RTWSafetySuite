@@ -1,6 +1,6 @@
 <?php
 //server database
-$serverName = "http://csi.saltrupiano.com/phpmyadmin/";
+$serverName = "35.223.86.91";
 $userName = "user";
 $password = "oakland";
 $dbName = "rtwdb";
