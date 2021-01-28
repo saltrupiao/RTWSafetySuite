@@ -21,7 +21,7 @@
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
           //will landing page be home or go straight to dashboards?
-         header("location: home.php");
+         header("location: ../home.php");
       }else {
          $error = "Your Login Name or Password is invalid";
          echo "<h1>Invalid Credentials</h1>";
