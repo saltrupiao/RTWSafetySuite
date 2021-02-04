@@ -2,7 +2,9 @@
    session_start();
     //include_once 'connection.php';
     //server database
-    $serverName = "35.223.86.91";
+    //$serverName = "35.223.86.91";
+    //local instance
+    $serverName = "localhost";
     $userName = "user";
     $password = "oakland";
     $dbName = "rtwdb";
