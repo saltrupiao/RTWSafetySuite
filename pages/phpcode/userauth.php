@@ -23,13 +23,13 @@
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
           //if isadmin row is 1 then go to admin dashboard
-          //if ($row["EMP_ISADMIN"]== "1"){
-            //  header("location: ../admin.php");
-          //}
-          //if regular user go to emp dashboard
-          //else {
-            //  header("location: ../home.php");
-          //}
+          if ($row["EMP_ISADMIN"]== "1"){
+              header("location: ../admin.php");
+          }
+          if regular user go to emp dashboard
+          else {
+              header("location: ../home.php");
+          }
       }else {
          $error = "Your Login Name or Password is invalid";
          echo "<h1>$error</h1>";
