@@ -2,9 +2,9 @@
    session_start();
     //include_once 'connection.php';
     //server database
-    $serverName = "localhost";
-    $userName = "root";//"user";
-    $password = "Swagger13";//"oakland";
+    $serverName = "35.223.86.91";
+    $userName = "user";
+    $password = "oakland";
     $dbName = "rtwdb";
     // Create connection
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
