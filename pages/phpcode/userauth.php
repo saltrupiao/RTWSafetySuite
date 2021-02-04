@@ -10,8 +10,8 @@
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
-      $myusername = mysqli_real_escape_string($conn,$_POST['Username']);
-      $mypassword = mysqli_real_escape_string($conn,$_POST['Password']); 
+      $myusername = mysqli_real_escape_string($conn,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($conn,$_POST['password']);
       $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername' and EMP_PW = '$mypassword'";
       echo "<h1>$sql</h1>";
       $result = mysqli_query($conn,$sql);
