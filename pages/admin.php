@@ -3,7 +3,7 @@
 session_start();
 if($_SESSION['login_user']){
     //we can change welcome to something else
-    echo "Welcome " . $_SESSION["login_user"];
+    echo "Welcome" . $_SESSION["login_user"];
 }else{
     //stays at login page if session not created
     header("location: login.html");
@@ -11,4 +11,6 @@ if($_SESSION['login_user']){
 
 //html
 echo "Hello Admin";
+echo "<br>";
+echo "<a href=phpcode/logout.php>Logout</a>";
 ?>

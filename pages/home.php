@@ -11,4 +11,6 @@ if($_SESSION['login_user']){
 
 //html 
 echo "Hello World";
+echo "<br>";
+echo "<a href=phpcode/logout.php>Logout</a>";
 ?>
