@@ -13,6 +13,7 @@
       $myusername = mysqli_real_escape_string($conn,$_POST['Username']);
       $mypassword = mysqli_real_escape_string($conn,$_POST['Password']); 
       $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername' and EMP_PW = '$mypassword'";
+      echo "<h1>$sql</h1>";
       $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
