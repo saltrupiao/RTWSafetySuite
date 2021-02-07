@@ -2,7 +2,7 @@
    session_start();
     //include_once 'connection.php';
     //server database
-    $serverName = "35.223.86.91";
+    $serverName = "localhost";
     $userName = "user";
     $password = "oakland";
     $dbName = "rtwdb";
@@ -13,10 +13,11 @@
       $myusername = mysqli_real_escape_string($conn,$_POST['username']);
       $mypassword = mysqli_real_escape_string($conn,$_POST['password']);
       $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername' and EMP_PW = '$mypassword'";
-      echo "<h1>$sql</h1>";
+
       $result = mysqli_query($conn,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
+
       $count = mysqli_num_rows($result);
       // If result matched $myusername and $mypassword, table row must be 1 row
       if($count == 1) {
@@ -25,7 +26,7 @@
           if ($row["EMP_ISADMIN"]== "1"){
               header("location: ../admin.php");
           }
-          //if regular user go to emp dashboard
+          if regular user go to emp dashboard
           else {
               header("location: ../home.php");
           }
