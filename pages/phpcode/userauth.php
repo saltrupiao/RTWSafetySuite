@@ -2,7 +2,7 @@
    session_start();
     //include_once 'connection.php';
     //server database
-    $serverName = "localhost";
+    $serverName = "localhost";//always stays the same between local and main server
     $userName = "user";
     $password = "oakland";
     $dbName = "rtwdb";
@@ -26,7 +26,7 @@
           if ($row["EMP_ISADMIN"]== "1"){
               header("location: ../admin.php");
           }
-          if regular user go to emp dashboard
+          //regular user go to emp dashboard
           else {
               header("location: ../home.php");
           }
