@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $currentUser = $_SESSION['login_user'];
 
     $serverName = "localhost";
     $userName = "user";
@@ -24,6 +26,7 @@
         $signatureBox = mysqli_real_escape_string($conn,$_POST['signatureBox']);
 
         // debug statements - values from form
+        echo "<h1>Currently Logged-In User ID: $currentUser</h1>";
         echo "<h2>Fever: $fever</h2>";
         echo "<h2>Cough: $cough</h2>";
         echo "<h2>Breath: $breath</h2>";
