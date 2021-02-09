@@ -9,6 +9,8 @@
     // Create connection
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
 
+
+
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         // get results from form
         $currentDate = date("Y-m-d h:i:sa");
@@ -49,7 +51,17 @@
         $currentEmpID = $row['EMP_ID'];
         echo "<h1>Current Employee ID: $currentEmpID</h1>";
 
-        $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) VALUES (NULL, '2', '02-09-2021 11:16:41', 'yes', 'no', 'no', 'no', 'yes', 'yes', 'yes', 'no', 'yes', 'no', 'yes', 'no', 'no', NULL)";
+        $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) 
+                                              VALUES (NULL, '$currentEmpID', '$currentDate', '$cough', '$breath', '$fever', NULL, '$aches', '$headache', '$tasteSmell', '$soreThroat', '$congest', '$nausea', '$d', '$covidPositive', '$exposure', NULL)";
+
+        //Source: https://www.w3schools.com/php/php_mysql_insert.asp
+        if ($conn->query($sqlInsert) === TRUE) {
+            echo "New record inserted successfully.";
+        } else {
+            echo "Error: " . $sqlInsert . "<br>" . $conn->error;
+        }
+
+        $conn->close();
 
         /*
         $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername' and EMP_PW = '$mypassword'";
