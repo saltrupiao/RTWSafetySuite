@@ -11,6 +11,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         // get results from form
+        $currentDate = date("Y-m-d h:i:sa");
         $fever = mysqli_real_escape_string($conn,$_POST['fever']);
         $cough = mysqli_real_escape_string($conn,$_POST['cough']);
         $breath = mysqli_real_escape_string($conn,$_POST['breath']);
@@ -27,6 +28,7 @@
 
         // debug statements - values from form
         echo "<h1>Currently Logged-In User ID: $currentUser</h1>";
+        echo "<h2>Date of Recorded Response: </h2>";
         echo "<h2>Fever: $fever</h2>";
         echo "<h2>Cough: $cough</h2>";
         echo "<h2>Breath: $breath</h2>";
@@ -40,6 +42,7 @@
         echo "<h2>COVID Positive in last 14 days: $covidPositive</h2>";
         echo "<h2>Exposed to COVID: $exposure</h2>";
         echo "<h2>Employee Electronic Signature: $signatureBox</h2>";
+
 
 
         /*
