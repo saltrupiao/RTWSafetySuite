@@ -45,8 +45,9 @@
 
         $sqlGetID = "SELECT EMP_ID FROM EMPLOYEE WHERE EMP_USERID = '$currentUser'";
         $resultGetID = mysqli_query($conn,$sqlGetID);
-        $row = mysqli_fetch_row($resultGetID);
-        echo "<h1>ResultGetID: $row</h1>";
+        $row = mysqli_fetch_array($resultGetID,MYSQLI_ASSOC);
+        $currentEmpID = $row['EMP_ID'];
+        echo "<h1>Current Employee ID: $currentEmpID</h1>";
 
         $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) VALUES (NULL, '2', '02-09-2021 11:16:41', 'yes', 'no', 'no', 'no', 'yes', 'yes', 'yes', 'no', 'yes', 'no', 'yes', 'no', 'no', NULL)";
 
