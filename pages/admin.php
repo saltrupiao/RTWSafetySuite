@@ -1,16 +1,30 @@
 <?php
 //every page after login will need this php code for session
 session_start();
-if($_SESSION['login_user']){
-    //we can change welcome to something else
-    echo "Welcome" . $_SESSION["login_user"];
+//user session stored in variable 
+$adminuser = $_SESSION['login_user'];
+$serverName = "localhost";//always stays the same between local and main server
+$userName = "user";
+$password = "oakland";
+$dbName = "rtwdb";
+// Create connection
+$conn = mysqli_connect($serverName, $userName , $password, $dbName);
+//selecting the is admin 
+$sql = "SELECT EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$adminuser'";
+      $result = mysqli_query($conn,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+if($row["EMP_ISADMIN"] == "1"){
+    //ensuring admin session 
+    echo "Welcome" . " " . $adminuser;
 }else{
-    //stays at login page if session not created
+    //if not an admin, resets back to login
+    unset($adminuser);
     header("location: login.html");
 }
 
 //html
-echo "Hello Admin";
+echo "<br>Hello Admin";
 echo "<br>";
 echo "<a href=phpcode/logout.php>Logout</a>";
 ?>
