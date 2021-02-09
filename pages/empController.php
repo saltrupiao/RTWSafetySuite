@@ -28,7 +28,7 @@
 
         // debug statements - values from form
         echo "<h1>Currently Logged-In User ID: $currentUser</h1>";
-        echo "<h2>Date of Recorded Response: </h2>";
+        echo "<h2>Date of Recorded Response: $currentDate</h2>";
         echo "<h2>Fever: $fever</h2>";
         echo "<h2>Cough: $cough</h2>";
         echo "<h2>Breath: $breath</h2>";
@@ -43,7 +43,11 @@
         echo "<h2>Exposed to COVID: $exposure</h2>";
         echo "<h2>Employee Electronic Signature: $signatureBox</h2>";
 
+        $sqlGetID = "SELECT EMP_ID FROM EMPLOYEE WHERE EMP_USERID = '$currentUser'";
+        $resultGetID = mysqli_query($conn,$sqlGetID);
+        echo "<h1>ResultGetID: $resultGetID</h1>";
 
+        $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) VALUES (NULL, '2', '02-09-2021 11:16:41', 'yes', 'no', 'no', 'no', 'yes', 'yes', 'yes', 'no', 'yes', 'no', 'yes', 'no', 'no', NULL)";
 
         /*
         $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername' and EMP_PW = '$mypassword'";
