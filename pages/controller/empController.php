@@ -53,8 +53,7 @@
 
         $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) 
                                               VALUES (NULL, '$currentEmpID', '$currentDate', '$cough', '$breath', '$fever', NULL, '$aches', '$headache', '$tasteSmell', '$soreThroat', '$congest', '$nausea', '$d', '$covidPositive', '$exposure', NULL)";
-        $sqlInsertStatus = "INSERT INTO `EMPLOYEE` (`EMP_STATUS`)
-                                            VALUES ('$status')";
+
         //Source: https://www.w3schools.com/php/php_mysql_insert.asp
         if ($conn->query($sqlInsert) === TRUE) {
             echo "New record inserted successfully.";
@@ -110,5 +109,11 @@
         else {
             $status = 'OK';
         }
-
+        $sqlInsertStatus = "UPDATE `EMPLOYEE` SET `EMP_STATUS` = '$status' WHERE `EMPLOYEE`.`EMP_ID` = $currentEmpID";
+        //Source: https://www.w3schools.com/php/php_mysql_insert.asp
+        if ($conn->query($sqlInsertStatus) === TRUE) {
+            echo "New record inserted successfully.";
+        } else {
+            echo "Error: " . $sqlInsertStatus . "<br>" . $conn->error;
+        }
     }
