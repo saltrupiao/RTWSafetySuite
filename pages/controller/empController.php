@@ -92,6 +92,9 @@
         if ($soreThroat == "yes")  {
             $count = $count + 1;
         }
+        if ($congest == "yes")  {
+            $count = $count + 1;
+        }
         if ($aches == 'yes') {
             $count = $count + 1;
         }
