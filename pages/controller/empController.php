@@ -61,7 +61,7 @@
             echo "Error: " . $sqlInsert . "<br>" . $conn->error;
         }
 
-        $conn->close();
+
         $count1 = 0;
         if ($fever == "yes")  {
             $count1 = $count1 + 1;
@@ -116,4 +116,5 @@
         } else {
             echo "Error: " . $sqlInsertStatus . "<br>" . $conn->error;
         }
+        $conn->close();
     }
