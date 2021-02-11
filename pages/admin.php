@@ -26,5 +26,5 @@ if($row["EMP_ISADMIN"] == "1"){
 //html
 echo "<br>Hello Admin";
 echo "<br>";
-echo "<a href=phpcode/logout.php>Logout</a>";
+echo "<a href=controller/logout.php>Logout</a>";
 ?>
