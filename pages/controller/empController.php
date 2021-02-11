@@ -68,7 +68,7 @@
             $count1 = $count1 + 1;
             echo $count1;
         }
-        elseif ($cough == "yes")  {
+        if ($cough == "yes")  {
             echo 'You have a cough';
             $count1 = $count1 + 1;
             echo $count1;
