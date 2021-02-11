@@ -91,7 +91,6 @@
         $count = 0;
         if ($soreThroat == "yes")  {
             $count = $count + 1;
-
         }
         if ($aches == 'yes') {
             $count = $count + 1;
