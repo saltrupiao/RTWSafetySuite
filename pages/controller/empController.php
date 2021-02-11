@@ -62,10 +62,53 @@
         }
 
         $conn->close();
+        $count1 = 0;
         if ($fever == "yes")  {
             echo 'You have a fever';
+            $count + 1;
         }
-        else {
-            echo 'You are good';
+        if ($cough == "yes")  {
+            echo 'You have a cough';
+            $count + 1;
         }
+        if ($breath == "yes")  {
+            echo 'You have a hard time breathing';
+            $count + 1;
+        }
+        if ($covidPositive == "yes")  {
+            echo 'You are positive';
+            $count + 1;
+        }
+        if ($exposure == "yes")  {
+            echo 'You have been exposed';
+            $count + 1;
+        }
+        if ($count1 > 1) {
+            echo 'You are not allowed in this dojo';
+            $count + 1;
+        }
+        $count = 0;
+        if ($soreThroat == "yes")  {
+            $count + 1;
+
+        }
+        if ($aches == 'yes') {
+            $count + 1;
+        }
+        if ($tasteSmell == 'yes') {
+            $count + 1;
+        }
+        if ($headache == 'yes') {
+            $count + 1;
+        }
+        if ($d == 'yes') {
+            $count + 1;
+        }
+        if ($nausea == 'yes') {
+            $count + 1;
+        }
+        if ($count > 2) {
+            echo 'You are not allowed in this dojo';
+        }
+
     }
