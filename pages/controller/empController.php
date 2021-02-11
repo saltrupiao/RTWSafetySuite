@@ -53,7 +53,8 @@
 
         $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) 
                                               VALUES (NULL, '$currentEmpID', '$currentDate', '$cough', '$breath', '$fever', NULL, '$aches', '$headache', '$tasteSmell', '$soreThroat', '$congest', '$nausea', '$d', '$covidPositive', '$exposure', NULL)";
-
+        $sqlInsertStatus = "INSERT INTO `EMPLOYEE` (`EMP_STATUS`)
+                                            VALUES ('$status')";
         //Source: https://www.w3schools.com/php/php_mysql_insert.asp
         if ($conn->query($sqlInsert) === TRUE) {
             echo "New record inserted successfully.";
@@ -64,29 +65,19 @@
         $conn->close();
         $count1 = 0;
         if ($fever == "yes")  {
-            echo 'You have a fever';
             $count1 = $count1 + 1;
-            echo $count1;
         }
         if ($cough == "yes")  {
-            echo 'You have a cough';
             $count1 = $count1 + 1;
-            echo $count1;
         }
         if ($breath == "yes")  {
-            echo 'You have a hard time breathing';
             $count1 = $count1 + 1;
-            echo $count1;
         }
         if ($covidPositive == "yes")  {
-            echo 'You are positive';
             $count1 = $count1 + 1;
-            echo $count1;
         }
         if ($exposure == "yes")  {
-            echo 'You have been exposed';
             $count1 = $count1 + 1;
-            echo $count1;
         }
         $count = 0;
         if ($soreThroat == "yes")  {
@@ -111,15 +102,13 @@
             $count = $count + 1;
         }
         if ($count1 >= 1) {
-            echo 'You are not allowed in this dojo';
-            echo $count1;
+            $status =  'NO';
         }
         elseif ($count >= 2) {
-            echo 'You are not allowed in this dojo';
-            echo $count;
+            $status = 'NO';
         }
         else {
-            echo 'You are all set';
+            $status = 'OK';
         }
 
     }
