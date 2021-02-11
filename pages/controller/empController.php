@@ -102,12 +102,15 @@
         }
         if ($count1 >= 1) {
             $status =  'NO';
+            echo 'You are not permitted into this dojo!';
         }
         elseif ($count >= 2) {
             $status = 'NO';
+            echo 'You are not permitted into this dojo!';
         }
         else {
             $status = 'OK';
+            echo 'You are safe to enter!';
         }
         $sqlInsertStatus = "UPDATE `EMPLOYEE` SET `EMP_STATUS` = '$status' WHERE `EMPLOYEE`.`EMP_ID` = $currentEmpID";
         //Source: https://www.w3schools.com/php/php_mysql_insert.asp
