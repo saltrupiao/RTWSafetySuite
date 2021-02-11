@@ -82,10 +82,10 @@
         if ($exposure == "yes")  {
             echo 'You have been exposed';
             $count1 + 1;
+            echo $count1;
         }
         if ($count1 > 1) {
             echo 'You are not allowed in this dojo';
-            $count1 + 1;
         }
         $count = 0;
         if ($soreThroat == "yes")  {
