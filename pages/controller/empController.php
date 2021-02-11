@@ -65,23 +65,23 @@
         $count1 = 0;
         if ($fever == "yes")  {
             echo 'You have a fever';
-            $count1 + 1;
+            $count1 = $count1 + 1;
         }
-        if ($cough == "yes")  {
+        elseif ($cough == "yes")  {
             echo 'You have a cough';
-            $count1 + 1;
+            $count1 = $count1 + 1;
         }
         if ($breath == "yes")  {
             echo 'You have a hard time breathing';
-            $count1 + 1;
+            $count1 = $count1 + 1;
         }
         if ($covidPositive == "yes")  {
             echo 'You are positive';
-            $count1 + 1;
+            $count1 = $count1 + 1;
         }
         if ($exposure == "yes")  {
             echo 'You have been exposed';
-            $count1 + 1;
+            $count1 = $count1 + 1;
             echo $count1;
         }
         if ($count1 > 1) {
