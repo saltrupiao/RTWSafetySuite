@@ -88,9 +88,6 @@
             $count1 = $count1 + 1;
             echo $count1;
         }
-        if ($count1 >= 1) {
-            echo 'You are not allowed in this dojo';
-        }
         $count = 0;
         if ($soreThroat == "yes")  {
             $count = $count + 1;
@@ -111,9 +108,16 @@
         if ($nausea == 'yes') {
             $count = $count + 1;
         }
-        if ($count >= 2) {
+        if ($count1 >= 1) {
             echo 'You are not allowed in this dojo';
             echo $count;
+        }
+        elseif ($count >= 2) {
+            echo 'You are not allowed in this dojo';
+            echo $count;
+        }
+        else {
+            echo 'You are all set';
         }
 
     }
