@@ -62,7 +62,7 @@
         }
 
         $conn->close();
-        if ($fever == "feverYes")  {
+        if ($fever == "yes")  {
             echo 'You have a fever';
         }
         else {
