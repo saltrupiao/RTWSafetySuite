@@ -110,7 +110,7 @@
         }
         if ($count1 >= 1) {
             echo 'You are not allowed in this dojo';
-            echo $count;
+            echo $count1;
         }
         elseif ($count >= 2) {
             echo 'You are not allowed in this dojo';
