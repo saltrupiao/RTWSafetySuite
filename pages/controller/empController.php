@@ -93,26 +93,27 @@
         }
         $count = 0;
         if ($soreThroat == "yes")  {
-            $count + 1;
+            $count = $count + 1;
 
         }
         if ($aches == 'yes') {
-            $count + 1;
+            $count = $count + 1;
         }
         if ($tasteSmell == 'yes') {
-            $count + 1;
+            $count = $count + 1;
         }
         if ($headache == 'yes') {
-            $count + 1;
+            $count = $count + 1;
         }
         if ($d == 'yes') {
-            $count + 1;
+            $count = $count + 1;
         }
         if ($nausea == 'yes') {
-            $count + 1;
+            $count = $count + 1;
         }
-        if ($count > 2) {
+        if ($count >= 2) {
             echo 'You are not allowed in this dojo';
+            echo $count;
         }
 
     }
