@@ -18,15 +18,33 @@
 <body>
     <section id="nav-bar">
 
-        <div class="topnav" id="myTopnav">
-            <a href="#home" class="active">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <h3><a href="admin_temp.php"><b>Return To Work Safety Suite - Admin</b></a></h3>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href=".">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-manage.php">Manage Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-distance.php">Distance Tracking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
+                        <a class="nav-link"><?php echo "Welcome" . " " . $adminuser; ?></a>
+                        <a class="nav-link">|</a>
+                    </li>
+                </ul>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </nav>
 
     </section>
     <div class="row">
