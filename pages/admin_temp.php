@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
-    <link href="css/demo.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+    <link href="../css/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
