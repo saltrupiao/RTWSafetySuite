@@ -76,7 +76,7 @@
                         <a class="nav-link" href="admin-distance.php">Distance Tracking</a>
                     </li>
                     <li class="nav-item">
-                        <p class="nav-link"><?php echo "Welcome" . " " . $adminuser; ?></p>
+                        <p class="nav-link"><b><?php echo "Welcome" . " " . $adminuser; ?></b></p>
                         <a class="nav-link" href="./controller/logout.php">LOGOUT</a>
                     </li>
                 </ul>
