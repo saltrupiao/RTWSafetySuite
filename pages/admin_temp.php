@@ -1,3 +1,32 @@
+<?php
+    //every page after login will need this php code for session
+    session_start();
+
+    //user session stored in variable
+    $adminuser = $_SESSION['login_user'];
+    $serverName = "localhost";//always stays the same between local and main server
+    $userName = "user";
+    $password = "oakland";
+    $dbName = "rtwdb";
+
+    // Create connection
+    $conn = mysqli_connect($serverName, $userName , $password, $dbName);
+
+    //selecting the is admin
+    $sql = "SELECT EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$adminuser'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
+    if($row["EMP_ISADMIN"] == "1"){
+        //ensuring admin session
+        echo "Welcome" . " " . $adminuser;
+    }else{
+        //if not an admin, resets back to login
+        unset($adminuser);
+        header("location: login.html");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,26 +60,23 @@
     <section id="nav-bar">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a><b>Back to Work Page</b></a>
+            <h3><a href="admin_temp.php"><b>Return To Work Safety Suite - Admin</b></a></h3>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/../#top">Link0</a>
+                        <a class="nav-link active" href=".">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/../#about">Link1</a>
+                        <a class="nav-link" href="admin-manage.php">Manage Employees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/../#courses">Link2</a>
+                        <a class="nav-link" href="admin-distance.php">Distance Tracking</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/../#services">Link3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/../#contact">LOGOUT</a>
+                        <a class="nav-link" href="./controller/logout.php">LOGOUT</a>
                     </li>
                 </ul>
             </div>
