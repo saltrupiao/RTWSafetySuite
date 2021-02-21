@@ -93,42 +93,71 @@
                 <div class="card-body ">
                     <table class="table table-striped table-hover">
                         <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Fever</th>
-                            <th scope="col">Cough</th>
-                            <th scope="col">Shortness of Breath</th>
-                            <th scope="col">Congestion</th>
-                            <th scope="col">Aches</th>
-                            <th scope="col">Loss of Taste/Smell</th>
-                            <th scope="col">Headache</th>
-                            <th scope="col">Diarrhea</th>
-                            <th scope="col">Nausea</th>
-                            <th scope="col">COVID Positive</th>
-                            <th scope="col">COVID Exposed</th>
-                            <th scope="col">Actions</th>
-                        </tr>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Fever</th>
+                                <th scope="col">Cough</th>
+                                <th scope="col">Shortness of Breath</th>
+                                <th scope="col">Congestion</th>
+                                <th scope="col">Aches</th>
+                                <th scope="col">Loss of Taste/Smell</th>
+                                <th scope="col">Headache</th>
+                                <th scope="col">Diarrhea</th>
+                                <th scope="col">Nausea</th>
+                                <th scope="col">COVID Positive</th>
+                                <th scope="col">COVID Exposed</th>
+                                <th scope="col">Actions</th>
+                            </tr>
                         </thead>
                         <tbody>
-
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
