@@ -77,7 +77,8 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"><?php echo "Welcome" . " " . $adminuser; ?></a>
-                        <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;&nbsp; |</a>
+                        <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
+                        <a class="nav-link">&nbsp;&nbsp;&nbsp;|</a>
                     </li>
                 </ul>
             </div>
