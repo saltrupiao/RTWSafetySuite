@@ -66,7 +66,6 @@ if($row["EMP_ISADMIN"] == "1"){
                     <li class="nav-item">
                         <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
                         <a class="nav-link"><?php echo "Welcome" . " " . $adminuser; ?></a>
-                        <a class="nav-link">|</a>
                     </li>
                 </ul>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
