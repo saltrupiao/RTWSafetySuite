@@ -19,7 +19,7 @@
     $active = $row['active'];
     if($row["EMP_ISADMIN"] == "1"){
         //ensuring admin session
-        echo "Welcome" . " " . $adminuser;
+        //echo "Welcome" . " " . $adminuser;
     }else{
         //if not an admin, resets back to login
         unset($adminuser);
@@ -76,6 +76,7 @@
                         <a class="nav-link" href="admin-distance.php">Distance Tracking</a>
                     </li>
                     <li class="nav-item">
+                        <p class="nav-link"><?php echo "Welcome" . " " . $adminuser; ?></p>
                         <a class="nav-link" href="./controller/logout.php">LOGOUT</a>
                     </li>
                 </ul>
