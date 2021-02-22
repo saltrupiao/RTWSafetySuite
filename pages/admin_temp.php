@@ -48,7 +48,7 @@ if($row["EMP_ISADMIN"] == "1"){
     <section id="nav-bar">
 
         <nav class="navbar navbar-expand-lg navbar-top topnav" id="myTopnav">
-            <h3><a href="admin_temp.php"><b>Return To Work Safety Suite - Admin</b></a></h3>
+            <a href="admin_temp.php"><b>Return To Work Safety Suite - Admin</b></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
