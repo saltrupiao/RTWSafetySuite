@@ -51,6 +51,11 @@ a.nav-link.active {
     color: black;
 }
 
+li.nav-link.active {
+    background-color: #ddd;
+    color: black;
+}
+
 .topnav .icon {
     display: none;
 }
