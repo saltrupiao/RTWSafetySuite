@@ -41,6 +41,10 @@ body {
     color: black;
 }
 
+a:active {
+    color: black;
+}
+
 .topnav .icon {
     display: none;
 }

@@ -55,7 +55,7 @@ if($row["EMP_ISADMIN"] == "1"){
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" class="active" href=".">Home</a>
+                        <a class="nav-link" href=".">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin-manage.php">Manage Employees</a>
