@@ -54,7 +54,7 @@ if($row["EMP_ISADMIN"] == "1"){
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href=".">Home</a>
                     </li>
                     <li class="nav-item">
