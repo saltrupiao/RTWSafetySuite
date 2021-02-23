@@ -136,7 +136,8 @@ if($row["EMP_ISADMIN"] == "1"){
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td>@twitter</td>
+                                <td>test</td>
+                                <td>test2</td>
                                 <td>@twitter</td>
                                 <td>@mdo</td>
                                 <td>@mdo</td>
