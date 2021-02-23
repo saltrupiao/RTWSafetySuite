@@ -42,6 +42,7 @@ body {
 }
 
 a:active {
+    background-color: #ddd;
     color: black;
 }
 
