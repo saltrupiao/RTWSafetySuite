@@ -1,0 +1,23 @@
+main{
+    clear:both;
+}
+table,th,td{
+    width:100%;
+    border:none;
+    text-align: center;
+}
+table th {
+    padding: 10px 0px 6px 0px;
+}
+tbody td {
+    height:500px;
+}
+tbody,td {
+    border:none;
+}
+tr {
+    border:1px solid black;
+}
+h1{
+    font-weight:bold;
+}
