@@ -80,12 +80,11 @@ if($row["EMP_ISADMIN"] == "1"){
         <div class="col-lg-11">
             <div class="card">
                 <div class="card-header ">
-                    <h5 class="card-title">Employee Status Overview</h5>
+                    <h5 class="card-title">On-Site Distance Tracker</h5>
                 </div>
                 <div class="card-body ">
                     <main>
                         <div class="container-fluid">
-                            <h1>On-Site Distance Tracker</h1>
                             <form>
                                 <table>
                                     <tr><th>
