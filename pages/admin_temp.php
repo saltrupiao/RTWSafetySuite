@@ -67,8 +67,8 @@ $resultTable = $conn->query($sqlTable);
                 <div class="card-header ">
                     <h5 class="card-title">Employee Status Overview</h5>
                 </div>
-                <div class="card-body ">
-                    <table class="table-responsive-sm table-striped table-hover">
+                <div class="table-responsive-sm card-body">
+                    <table class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
