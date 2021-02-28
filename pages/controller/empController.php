@@ -52,6 +52,7 @@
         echo "<h1>Current Employee ID: $currentEmpID</h1>";
 
         $sqlCheckEntries = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_USERID = '$currentEmpID' AND EMP_DATE_INSERT = '$currentDate'";
+        echo "<h1>" . $sqlCheckEntries . "</h1>";
         $resultCheckEntries = $conn->query($sqlCheckEntries);
 
         if ($resultCheckEntries->num_rows = 0) {
@@ -124,7 +125,7 @@
                 echo "Error: " . $sqlInsertStatus . "<br>" . $conn->error;
             }
         } else {
-            header("Location: ../submitg1.html");
+            //header("Location: ../submitg1.html");
         }
 
 
