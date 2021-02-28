@@ -51,7 +51,7 @@
         $currentEmpID = $row['EMP_ID'];
         echo "<h1>Current Employee ID: $currentEmpID</h1>";
 
-        $sqlCheckEntries = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_USERID = '$currentEmpID' AND EMP_DATE_INSERT = '$currentDate'";
+        $sqlCheckEntries = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_ID = '$currentEmpID' AND EMP_DATE_INSERT = '$currentDate'";
         echo "<h1>" . $sqlCheckEntries . "</h1>";
         $resultCheckEntries = $conn->query($sqlCheckEntries);
 
