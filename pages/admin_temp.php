@@ -99,7 +99,7 @@ $resultTable = $conn->query($sqlTable);
                                         $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID";
                                         echo '<h1>' . $sqlFLName . '</h1>';
                                         $resultFLName = mysqli_query($conn,$sql);
-                                        $rowFLName = mysqli_fetch_array($result,MYSQLI_ASSOC);
+                                        $rowFLName = $resultFLName->fetch_assoc();
                                         $empFname = $rowFLName['EMP_FNAME'];
                                         $empLname = $rowFLName['EMP_LNAME'];
                                         $empFullName = $empFname . " " . $empLname;
