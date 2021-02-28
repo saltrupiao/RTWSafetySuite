@@ -97,14 +97,14 @@ $resultTable = $conn->query($sqlTable);
                                         $name = "";
 
                                         $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID";
-                                        echo '<h1>' . $sqlFLName . '</h1>';
-                                        $resultFLName = mysqli_query($conn,$sql);
-                                        $rowFLName = $resultFLName->fetch_assoc();
-                                        $empFname = $rowFLName['EMP_FNAME'];
-                                        $empLname = $rowFLName['EMP_LNAME'];
+                                        $resultFLName = $conn->query($sqlFLName);
+                                        while ($rowFLName = $resultFLName->fetch_assoc()) {
+                                            $empFname = $rowFLName['EMP_FNAME'];
+                                            $empLname = $rowFLName['EMP_LNAME'];
+                                            $status = $rowFLName['EMP_STATUS'];
+                                        }
                                         $empFullName = $empFname . " " . $empLname;
 
-                                        $status = $rowFLName['EMP_STATUS'];
                                         $fever = $rowTable['SYMP_FEAVER'];
                                         $cough = $rowTable['SYMP_COUGH'];
                                         $shortnessBreath = $rowTable['SYMP_BREATH'];
