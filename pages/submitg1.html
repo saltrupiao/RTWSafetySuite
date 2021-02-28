@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirection...</title>
+
+    <!-- Code referenced from: https://stackoverflow.com/questions/12498209/redirect-10-second-countdown -->
+
+    <h1>You've already submitted this form!</h1>
+    <p class="lead">Please contact your administrator to revise your submission if it's in error.</p>
+    <p>You will be redirected in <span id="counter">15</span> second(s)...</p>
+    <script type="text/javascript">
+        function countdown() {
+            var i = document.getElementById('counter');
+            if (parseInt(i.innerHTML)<=0) {
+                location.href = 'home.php';
+            }
+            if (parseInt(i.innerHTML)!=0) {
+                i.innerHTML = parseInt(i.innerHTML)-1;
+            }
+        }
+        setInterval(function(){ countdown(); },1500);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
