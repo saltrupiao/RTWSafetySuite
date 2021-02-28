@@ -46,7 +46,7 @@ if($row["EMP_ISADMIN"] == "1"){
     </head>
 
     <body>
-        <div class="container">
+        <div class="container-fluid">
         <section id="nav-bar">
             <div class="topnav" id="myTopnav">
                 <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a>
