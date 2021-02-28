@@ -13,7 +13,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         // get results from form
-        $currentDate = date("Y-m-d h:i:sa");
+        $currentDate = date("Y-m-d");
         $fever = mysqli_real_escape_string($conn,$_POST['fever']);
         $cough = mysqli_real_escape_string($conn,$_POST['cough']);
         $breath = mysqli_real_escape_string($conn,$_POST['breath']);
