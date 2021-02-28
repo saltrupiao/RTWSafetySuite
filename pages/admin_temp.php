@@ -181,11 +181,11 @@ if($row["EMP_ISADMIN"] == "1"){
     </div>
     <script>
         function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
+            var x = document.getElementById("navbarNav");
+            if (x.className === "navbarNav") {
                 x.className += " responsive";
             } else {
-                x.className = "topnav";
+                x.className = "navbarNav";
             }
         }
     </script>
