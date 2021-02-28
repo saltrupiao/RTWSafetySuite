@@ -48,7 +48,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <section id="nav-bar">
             <div class="topnav" id="myTopnav">
                 <a href="admin_temp.php"><b>Return To Work Safety Suite - Admin</b></a>
