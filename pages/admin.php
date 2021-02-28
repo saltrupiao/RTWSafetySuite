@@ -27,6 +27,7 @@
     }
     $currentDate = date("Y-m-d");
     $sqlTable = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_DATE_INSERT = $currentDate";
+    echo "<h1>" . $sqlTable . "</h1>";
     $resultTable = $conn->query($sqlTable);
 ?>
 
@@ -96,7 +97,6 @@
                                         $empID = $rowTable['EMP_ID'];
                                         $name = "";
                                         $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID";
-                                        echo "<h1>" . $sqlFLName . "</h1>";
                                         $resultFLName = $conn->query($sqlFLName);
                                         while ($rowFLName = $resultFLName->fetch_assoc()) {
                                             $empFname = $rowFLName['EMP_FNAME'];
