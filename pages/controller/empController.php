@@ -125,7 +125,7 @@
                 echo "Error: " . $sqlInsertStatus . "<br>" . $conn->error;
             }
         } else {
-            //header("Location: ../submitg1.html");
+            header("Location: ../submitg1.html");
         }
 
 
