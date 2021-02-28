@@ -138,7 +138,7 @@ $resultTable = mysqli_query($conn,$sql);
                                     echo "</tr>";
                                 }
                             ?>
-                            <tr>
+                            <!--<tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>
                                 <td>Otto</td>
@@ -185,7 +185,7 @@ $resultTable = mysqli_query($conn,$sql);
                                 <td>@mdo</td>
                                 <td>@mdo</td>
                                 <td>@mdo</td>
-                            </tr>
+                            </tr>-->
                         </tbody>
                     </table>
                 </div>
