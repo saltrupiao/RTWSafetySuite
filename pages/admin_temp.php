@@ -90,8 +90,8 @@ $resultTable = $conn->query($sqlTable);
                         </thead>
                         <tbody>
                             <?php
+                                //Logic base reference: https://www.w3schools.com/php/php_mysql_select.asp
                                 if ($resultTable->num_rows > 0) {
-
                                     while ($rowTable = $resultTable->fetch_assoc()) {
                                         $empID = $rowTable['EMP_ID'];
                                         $name = "";
