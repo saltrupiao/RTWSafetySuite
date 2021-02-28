@@ -26,7 +26,8 @@ if($row["EMP_ISADMIN"] == "1"){
     header("location: login.html");
 }
 
-$sqlTable = "SELECT * FROM EMPLOYEE_SYMP"
+$sqlTable = "SELECT * FROM EMP_SYMPTOMS";
+$resultTable = mysqli_query($conn,$sql);
 ?>
 
 <!DOCTYPE html>
@@ -104,6 +105,39 @@ $sqlTable = "SELECT * FROM EMPLOYEE_SYMP"
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                while ($rowTable = $resultTable->fetch_assoc()) {
+                                    $name = "";
+                                    $status = "";
+                                    $empID = $rowTable['EMP_ID'];
+                                    $fever = $rowTable['SYMP_FEAVER'];
+                                    $cough = $rowTable['SYMP_COUGH'];
+                                    $shortnessBreath = $rowTable['SYMP_BREATH'];
+                                    $congestion = $rowTable['SYMP_CONGEST'];
+                                    $aches = $rowTable['SYMP_ACHES'];
+                                    $lossTasteSmell = $rowTable['SYMP_TS'];
+                                    $headache = $rowTable['SYMP_HEADACHE'];
+                                    $d = $rowTable['SYMP_DIARRHEA'];
+                                    $nausea = $rowTable['SYMP_NAUS'];
+                                    $covidPositive = $rowTable['SYMP_COVIDPOS'];
+                                    $covidExposed = $rowTable['SYMP_COVIDEXPOS'];
+                                    echo "<tr>";
+                                    echo '<td>'.$empID.'</td>';
+                                    echo '<td>'.$status.'</td>';
+                                    echo '<td>'.$fever.'</td>';
+                                    echo '<td>'.$cough.'</td>';
+                                    echo '<td>'.$shortnessBreath.'</td>';
+                                    echo '<td>'.$congestion.'</td>';
+                                    echo '<td>'.$aches.'</td>';
+                                    echo '<td>'.$lossTasteSmell.'</td>';
+                                    echo '<td>'.$headache.'</td>';
+                                    echo '<td>'.$d.'</td>';
+                                    echo '<td>'.$nausea.'</td>';
+                                    echo '<td>'.$covidPositive.'</td>';
+                                    echo '<td>'.$covidExposed.'</td>';
+                                    echo "</tr>";
+                                }
+                            ?>
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>
