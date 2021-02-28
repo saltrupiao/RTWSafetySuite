@@ -25,8 +25,8 @@
         unset($adminuser);
         header("location: login.html");
     }
-
-    $sqlTable = "SELECT * FROM EMP_SYMPTOMS";
+    $currentDate = date("Y-m-d");
+    $sqlTable = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_DATE_INSERT = $currentDate";
     $resultTable = $conn->query($sqlTable);
 ?>
 
@@ -95,8 +95,7 @@
                                     while ($rowTable = $resultTable->fetch_assoc()) {
                                         $empID = $rowTable['EMP_ID'];
                                         $name = "";
-                                        $currentDate = date("Y-m-d");
-                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID AND EMP_DATE_INSERT = $currentDate";
+                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID";
                                         echo "<h1>" . $sqlFLName . "</h1>";
                                         $resultFLName = $conn->query($sqlFLName);
                                         while ($rowFLName = $resultFLName->fetch_assoc()) {
