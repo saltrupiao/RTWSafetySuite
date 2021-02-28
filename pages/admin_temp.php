@@ -25,6 +25,8 @@ if($row["EMP_ISADMIN"] == "1"){
     unset($adminuser);
     header("location: login.html");
 }
+
+$sqlTable = "SELECT * FROM EMPLOYEE_SYMP"
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +63,7 @@ if($row["EMP_ISADMIN"] == "1"){
                         <a class="nav-link" href="admin-manage.php">Manage Employees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin-distance.php">Distance Tracking</a>
+                        <a class="nav-link" href="admin_distance.php">Distance Tracking</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
