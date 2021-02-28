@@ -97,6 +97,7 @@
                                         $name = "";
                                         $currentDate = date("Y-m-d");
                                         $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID AND EMP_DATE_INSERT = $currentDate";
+                                        echo "<h1>" . $sqlFLName . "</h1>";
                                         $resultFLName = $conn->query($sqlFLName);
                                         while ($rowFLName = $resultFLName->fetch_assoc()) {
                                             $empFname = $rowFLName['EMP_FNAME'];
