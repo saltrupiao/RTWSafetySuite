@@ -96,7 +96,8 @@ $resultTable = $conn->query($sqlTable);
                                         $empID = $rowTable['EMP_ID'];
                                         $name = "";
 
-                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM rtwdb.EMPLOYEE WHERE EMP_ID = $empID";
+                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID";
+                                        echo '<h1>' . $sqlFLName . '</h1>';
                                         $resultFLName = mysqli_query($conn,$sql);
                                         $rowFLName = mysqli_fetch_array($result,MYSQLI_ASSOC);
                                         $empFname = $rowFLName['EMP_FNAME'];
