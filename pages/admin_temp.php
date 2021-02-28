@@ -28,6 +28,7 @@ if($row["EMP_ISADMIN"] == "1"){
 
 $sqlTable = "SELECT * FROM EMP_SYMPTOMS";
 $resultTable = $conn->query($sqlTable);
+
 ?>
 
 <!DOCTYPE html>
@@ -90,10 +91,19 @@ $resultTable = $conn->query($sqlTable);
                         <tbody>
                             <?php
                                 if ($resultTable->num_rows > 0) {
+
                                     while ($rowTable = $resultTable->fetch_assoc()) {
-                                        $name = "";
-                                        $status = "";
                                         $empID = $rowTable['EMP_ID'];
+                                        $name = "";
+
+                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM rtwdb.EMPLOYEE WHERE EMP_ID = $empID";
+                                        $resultFLName = mysqli_query($conn,$sql);
+                                        $rowFLName = mysqli_fetch_array($result,MYSQLI_ASSOC);
+                                        $empFname = $rowFLName['EMP_FNAME'];
+                                        $empLname = $rowFLName['EMP_LNAME'];
+                                        $empFullName = $empFname . " " . $empLname;
+
+                                        $status = $rowFLName['EMP_STATUS'];
                                         $fever = $rowTable['SYMP_FEAVER'];
                                         $cough = $rowTable['SYMP_COUGH'];
                                         $shortnessBreath = $rowTable['SYMP_BREATH'];
@@ -106,7 +116,7 @@ $resultTable = $conn->query($sqlTable);
                                         $covidPositive = $rowTable['SYMP_COVIDPOS'];
                                         $covidExposed = $rowTable['SYMP_COVIDEXPOS'];
                                         echo "<tr>";
-                                        echo '<td>'.$empID.'</td>';
+                                        echo '<td>'.$empFullName.'</td>';
                                         echo '<td>'.$status.'</td>';
                                         echo '<td>'.$fever.'</td>';
                                         echo '<td>'.$cough.'</td>';
