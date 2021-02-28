@@ -27,7 +27,7 @@ if($row["EMP_ISADMIN"] == "1"){
 }
 
 $sqlTable = "SELECT * FROM EMP_SYMPTOMS";
-$resultTable = mysqli_query($conn,$sql);
+$resultTable = $conn->query($sqlTable);
 ?>
 
 <!DOCTYPE html>
@@ -106,37 +106,44 @@ $resultTable = mysqli_query($conn,$sql);
                         </thead>
                         <tbody>
                             <?php
-                                while ($rowTable = $resultTable->fetch_assoc()) {
-                                    $name = "";
-                                    $status = "";
-                                    $empID = $rowTable['EMP_ID'];
-                                    $fever = $rowTable['SYMP_FEAVER'];
-                                    $cough = $rowTable['SYMP_COUGH'];
-                                    $shortnessBreath = $rowTable['SYMP_BREATH'];
-                                    $congestion = $rowTable['SYMP_CONGEST'];
-                                    $aches = $rowTable['SYMP_ACHES'];
-                                    $lossTasteSmell = $rowTable['SYMP_TS'];
-                                    $headache = $rowTable['SYMP_HEADACHE'];
-                                    $d = $rowTable['SYMP_DIARRHEA'];
-                                    $nausea = $rowTable['SYMP_NAUS'];
-                                    $covidPositive = $rowTable['SYMP_COVIDPOS'];
-                                    $covidExposed = $rowTable['SYMP_COVIDEXPOS'];
-                                    echo "<tr>";
-                                    echo '<td>'.$empID.'</td>';
-                                    echo '<td>'.$status.'</td>';
-                                    echo '<td>'.$fever.'</td>';
-                                    echo '<td>'.$cough.'</td>';
-                                    echo '<td>'.$shortnessBreath.'</td>';
-                                    echo '<td>'.$congestion.'</td>';
-                                    echo '<td>'.$aches.'</td>';
-                                    echo '<td>'.$lossTasteSmell.'</td>';
-                                    echo '<td>'.$headache.'</td>';
-                                    echo '<td>'.$d.'</td>';
-                                    echo '<td>'.$nausea.'</td>';
-                                    echo '<td>'.$covidPositive.'</td>';
-                                    echo '<td>'.$covidExposed.'</td>';
-                                    echo "</tr>";
+                                if ($resultTable->num_rows > 0) {
+                                    while ($rowTable = $resultTable->fetch_assoc()) {
+                                        $name = "";
+                                        $status = "";
+                                        $empID = $rowTable['EMP_ID'];
+                                        echo $empID;
+                                        $fever = $rowTable['SYMP_FEAVER'];
+                                        echo $fever;
+                                        $cough = $rowTable['SYMP_COUGH'];
+                                        $shortnessBreath = $rowTable['SYMP_BREATH'];
+                                        $congestion = $rowTable['SYMP_CONGEST'];
+                                        $aches = $rowTable['SYMP_ACHES'];
+                                        $lossTasteSmell = $rowTable['SYMP_TS'];
+                                        $headache = $rowTable['SYMP_HEADACHE'];
+                                        $d = $rowTable['SYMP_DIARRHEA'];
+                                        $nausea = $rowTable['SYMP_NAUS'];
+                                        $covidPositive = $rowTable['SYMP_COVIDPOS'];
+                                        $covidExposed = $rowTable['SYMP_COVIDEXPOS'];
+                                        echo "<tr>";
+                                        echo '<td>'.$empID.'</td>';
+                                        echo '<td>'.$status.'</td>';
+                                        echo '<td>'.$fever.'</td>';
+                                        echo '<td>'.$cough.'</td>';
+                                        echo '<td>'.$shortnessBreath.'</td>';
+                                        echo '<td>'.$congestion.'</td>';
+                                        echo '<td>'.$aches.'</td>';
+                                        echo '<td>'.$lossTasteSmell.'</td>';
+                                        echo '<td>'.$headache.'</td>';
+                                        echo '<td>'.$d.'</td>';
+                                        echo '<td>'.$nausea.'</td>';
+                                        echo '<td>'.$covidPositive.'</td>';
+                                        echo '<td>'.$covidExposed.'</td>';
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<h1> 0 results </h1>";
                                 }
+                                $conn->close();
                             ?>
                             <!--<tr>
                                 <th scope="row">1</th>
