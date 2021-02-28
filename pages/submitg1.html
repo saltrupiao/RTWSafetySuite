@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Redirection...</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    </head>
-    <body>
-        <!-- Code referenced from: https://stackoverflow.com/questions/12498209/redirect-10-second-countdown -->
+<head>
+    <meta charset="UTF-8">
+    <title>Redirection...</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-        <h1>You've already submitted this form!</h1>
-        <p class="lead">Please contact your administrator to revise your submission if it's in error.</p>
-        <p>You will be redirected in <span id="counter">15</span> second(s)...</p>
+</head>
+
+<body>
+    <!-- Code referenced from: https://stackoverflow.com/questions/12498209/redirect-10-second-countdown -->
+
+    <br>
+
+    <div class="container">
+        <div class="card text-dark bg-warning mb-3">
+            <div class="card-header">Form Submission Error</div>
+            <div class="card-body">
+                <h5 class="card-title">You've Aready Submitted This Form!</h5>
+                <p class="card-text">If you are seeing this message, it means you have already submitted your monitoring form for the day. Please speak to your supervisor to modify the results if you have submitted any answer in error.</p>
+                <br>
+                <p class="card-text">You will be redirected in <span id="counter">15</span> second(s)...</p>
+            </div>
+        </div>
         <script type="text/javascript">
             function countdown() {
                 var i = document.getElementById('counter');
-                if (parseInt(i.innerHTML)<=0) {
+                if (parseInt(i.innerHTML) <= 0) {
                     location.href = 'home.php';
                 }
-                if (parseInt(i.innerHTML)!=0) {
-                    i.innerHTML = parseInt(i.innerHTML)-1;
+                if (parseInt(i.innerHTML) != 0) {
+                    i.innerHTML = parseInt(i.innerHTML) - 1;
                 }
             }
-            setInterval(function(){ countdown(); },1500);
+            setInterval(function() {
+                countdown();
+            }, 155500);
+
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    </body>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+
 </html>
