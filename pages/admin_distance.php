@@ -56,13 +56,13 @@ if($row["EMP_ISADMIN"] == "1"){
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href=".">Home</a>
+                        <a class="nav-link" href="admin.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin-manage.php">Manage Employees</a>
+                        <a class="nav-link" href="admin_manage.php">Manage Employees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin-distance.php">Distance Tracking</a>
+                        <a class="nav-link active" href="admin_distance.php">Distance Tracking</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
