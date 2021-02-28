@@ -127,7 +127,5 @@
         } else {
             header("Location: ../submitg1.html");
         }
-
-
         $conn->close();
     }
