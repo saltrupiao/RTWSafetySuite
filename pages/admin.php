@@ -129,7 +129,7 @@
                                         echo '<td>'.$nausea.'</td>';
                                         echo '<td>'.$covidPositive.'</td>';
                                         echo '<td>'.$covidExposed.'</td>';
-                                        echo '<td><form action="./controller/adminController.php" method="get"><input type="hidden" value="'.$empID.'"<button type="submit" class="btn btn-danger" value="Submit">OVERRIDE</button></form></td>';
+                                        echo '<td><form action="./controller/adminController.php" method="get"><input type="hidden" value="'.$empID.'"><button type="submit" class="btn btn-danger" value="Submit">OVERRIDE</button></form></td>';
                                         echo "</tr>";
                                     }
                                 } else {
