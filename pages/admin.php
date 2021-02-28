@@ -27,7 +27,6 @@
     }
     $currentDate = date("Y-m-d");
     $sqlTable = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_DATE_INSERT = '$currentDate'";
-    echo "<h1>" . $sqlTable . "</h1>";
     $resultTable = $conn->query($sqlTable);
 ?>
 
