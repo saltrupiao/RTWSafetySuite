@@ -29,9 +29,8 @@
     $sqlTable = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_DATE_INSERT = '$currentDate'";
     $resultTable = $conn->query($sqlTable);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
     <head>
         <meta charset="utf-8" />
@@ -41,55 +40,46 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>
-            Admin Dashboard
-        </title>
-        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    </head>
+        <title> Admin Dashboard </title>
+        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' /> </head>
 
     <body>
         <div class="container-fluid">
             <section id="nav-bar">
-                <div class="topnav" id="myTopnav">
-                    <a href="admin_temp.php"><b>Return To Work Safety Suite - Admin</b></a>
-                    <a class="nav-link" href="admin_manage.php">Manage Employees</a>
-                    <a class="nav-link" href="admin_distance.php">Distance Tracking</a>
-                    <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
-                    <a class="nav-link"><?php echo "Welcome" . " " . $adminuser; ?></a>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                        <i class="fa fa-bars"></i>
+                <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a> <a class="nav-link" href="admin_manage.php">Manage Employees</a> <a class="nav-link" href="admin_distance.php">Distance Tracking</a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
+                    <a class="nav-link">
+                        <?php echo "Welcome" . " " . $adminuser; ?>
                     </a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i> </a>
                 </div>
-
             </section>
             <div class="row">
                 <div class="col-lg-11">
                     <div class="card">
                         <div class="card-header ">
-                            <h5 class="card-title">Employee Status Overview</h5>
-                        </div>
+                            <h5 class="card-title">Employee Status Overview</h5> </div>
                         <div class="table-responsive card-body">
                             <table class="table table-striped table-hover">
                                 <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Fever</th>
-                                    <th scope="col">Cough</th>
-                                    <th scope="col">Shortness of Breath</th>
-                                    <th scope="col">Congestion</th>
-                                    <th scope="col">Aches</th>
-                                    <th scope="col">Loss of Taste/Smell</th>
-                                    <th scope="col">Headache</th>
-                                    <th scope="col">Diarrhea</th>
-                                    <th scope="col">Nausea</th>
-                                    <th scope="col">COVID Positive</th>
-                                    <th scope="col">COVID Exposed</th>
-                                    <th scope="col">Actions</th>
-                                </tr>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Fever</th>
+                                        <th scope="col">Cough</th>
+                                        <th scope="col">Shortness of Breath</th>
+                                        <th scope="col">Congestion</th>
+                                        <th scope="col">Aches</th>
+                                        <th scope="col">Loss of Taste/Smell</th>
+                                        <th scope="col">Headache</th>
+                                        <th scope="col">Diarrhea</th>
+                                        <th scope="col">Nausea</th>
+                                        <th scope="col">COVID Positive</th>
+                                        <th scope="col">COVID Exposed</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <?php
+                                    <?php
                                 //Logic base reference: https://www.w3schools.com/php/php_mysql_select.asp
                                 if ($resultTable->num_rows > 0) {
                                     while ($rowTable = $resultTable->fetch_assoc()) {
@@ -142,9 +132,7 @@
                         </div>
                         <div class="card-footer ">
                             <hr>
-                            <div class="stats">
-                                <i class="fa fa-history"></i> This is the footer
-                            </div>
+                            <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
                         </div>
                     </div>
                 </div>
@@ -153,15 +141,11 @@
                 <div class="col-lg-11">
                     <div class="card">
                         <div class="card-header ">
-                            <h5 class="card-title">Company-Wide Statistics</h5>
-                        </div>
-                        <div class="card-body ">
-                        </div>
+                            <h5 class="card-title">Company-Wide Statistics</h5> </div>
+                        <div class="card-body "> </div>
                         <div class="card-footer ">
                             <hr>
-                            <div class="stats">
-                                <i class="fa fa-history"></i> This is the footer
-                            </div>
+                            <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
                         </div>
                     </div>
                 </div>
@@ -171,13 +155,13 @@
                     var x = document.getElementById("myTopnav");
                     if (x.className === "topnav") {
                         x.className += " responsive";
-                    } else {
+                    }
+                    else {
                         x.className = "topnav";
                     }
                 }
             </script>
         </div>
-
     </body>
 
-</html>
+    </html>
