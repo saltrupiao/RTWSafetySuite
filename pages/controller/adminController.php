@@ -21,7 +21,7 @@
             if ($rowGetStatus[0] = "NO") {
                 $newStatus = "YES";
                 echo "<h3>NEW STATUS IS YES</h3>";
-            } elseif ($rowGetStatus[0] = "YES") {
+            } else {
                 $newStatus = "NO";
                 echo "<h3>NEW STATUS IS NO</h3>";
             }
