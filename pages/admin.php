@@ -164,6 +164,16 @@
                                         }
                                         ?>
                                     </tr>
+                                    <tr>
+                                        <td>Employees With No Submission</td>
+                                        <?php
+                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = NULL GROUP by EMP_STATUS";
+                                        $resultGetNOCount = $conn->query($sqlGetNOCount);
+                                        while ($rowGetNOCount = $resultGetNOCount -> fetch_row()) {
+                                            echo "<td>" . $rowGetNOCount[1] . "</td>";
+                                        }
+                                        ?>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
