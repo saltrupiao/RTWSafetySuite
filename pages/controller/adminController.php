@@ -39,7 +39,7 @@
 
         if ($conn->query($sqlSwitchStatus) === TRUE) {
             echo "New record inserted successfully.";
-            //header("Location: ../admin.php");
+            header("Location: ../admin.php");
         } else {
             echo "Error: " . $sqlSwitchStatus . "<br>" . $conn->error;
         }
