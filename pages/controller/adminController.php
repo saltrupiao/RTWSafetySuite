@@ -18,7 +18,7 @@
 
         while ($rowGetStatus = $resultGetStatus -> fetch_row()) {
             echo "<h1>" . $rowGetStatus[0] . "</h1>";
-            if ($rowGetStatus[0] = "NO") {
+            if ($rowGetStatus[0] == "NO") {
                 $newStatus = "YES";
                 echo "<h3>NEW STATUS IS YES</h3>";
             } else {
