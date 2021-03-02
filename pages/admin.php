@@ -125,7 +125,6 @@
                                 } else {
                                     echo "<h1> 0 results </h1>";
                                 }
-                                $conn->close();
                                 ?>
                                 </tbody>
                             </table>
@@ -181,6 +180,7 @@
                 }
             </script>
         </div>
+    <?php $conn->close(); ?>
     </body>
 
     </html>
