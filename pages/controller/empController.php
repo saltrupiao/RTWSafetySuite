@@ -55,77 +55,81 @@
         echo "<h1>" . $sqlCheckEntries . "</h1>";
         $resultCheckEntries = $conn->query($sqlCheckEntries);
 
-        if ($resultCheckEntries->num_rows = 0) {
-            $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) 
+        $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) 
                                               VALUES (NULL, '$currentEmpID', '$currentDate', '$cough', '$breath', '$fever', NULL, '$aches', '$headache', '$tasteSmell', '$soreThroat', '$congest', '$nausea', '$d', '$covidPositive', '$exposure', NULL)";
 
-            //Source: https://www.w3schools.com/php/php_mysql_insert.asp
-            if ($conn->query($sqlInsert) === TRUE) {
-                echo "New record inserted successfully.";
-            } else {
-                echo "Error: " . $sqlInsert . "<br>" . $conn->error;
-            }
+        //Source: https://www.w3schools.com/php/php_mysql_insert.asp
+        if ($conn->query($sqlInsert) === TRUE) {
+            echo "New record inserted successfully.";
+        } else {
+            echo "Error: " . $sqlInsert . "<br>" . $conn->error;
+        }
 
 
-            $count1 = 0;
-            if ($fever == "yes")  {
-                $count1 = $count1 + 1;
-            }
-            if ($cough == "yes")  {
-                $count1 = $count1 + 1;
-            }
-            if ($breath == "yes")  {
-                $count1 = $count1 + 1;
-            }
-            if ($covidPositive == "yes")  {
-                $count1 = $count1 + 1;
-            }
-            if ($exposure == "yes")  {
-                $count1 = $count1 + 1;
-            }
-            $count = 0;
-            if ($soreThroat == "yes")  {
-                $count = $count + 1;
-            }
-            if ($congest == "yes")  {
-                $count = $count + 1;
-            }
-            if ($aches == 'yes') {
-                $count = $count + 1;
-            }
-            if ($tasteSmell == 'yes') {
-                $count = $count + 1;
-            }
-            if ($headache == 'yes') {
-                $count = $count + 1;
-            }
-            if ($d == 'yes') {
-                $count = $count + 1;
-            }
-            if ($nausea == 'yes') {
-                $count = $count + 1;
-            }
-            if ($count1 >= 1) {
-                $status =  'NO';
-                echo 'You are not permitted into this dojo!';
-            }
-            elseif ($count >= 2) {
-                $status = 'NO';
-                echo 'You are not permitted into this dojo!';
-            }
-            else {
-                $status = 'OK';
-                echo 'You are safe to enter!';
-            }
-            $sqlInsertStatus = "UPDATE `EMPLOYEE` SET `EMP_STATUS` = '$status' WHERE `EMPLOYEE`.`EMP_ID` = $currentEmpID";
-            //Source: https://www.w3schools.com/php/php_mysql_insert.asp
-            if ($conn->query($sqlInsertStatus) === TRUE) {
-                echo "New record inserted successfully.";
-            } else {
-                echo "Error: " . $sqlInsertStatus . "<br>" . $conn->error;
-            }
+        $count1 = 0;
+        if ($fever == "yes")  {
+            $count1 = $count1 + 1;
+        }
+        if ($cough == "yes")  {
+            $count1 = $count1 + 1;
+        }
+        if ($breath == "yes")  {
+            $count1 = $count1 + 1;
+        }
+        if ($covidPositive == "yes")  {
+            $count1 = $count1 + 1;
+        }
+        if ($exposure == "yes")  {
+            $count1 = $count1 + 1;
+        }
+        $count = 0;
+        if ($soreThroat == "yes")  {
+            $count = $count + 1;
+        }
+        if ($congest == "yes")  {
+            $count = $count + 1;
+        }
+        if ($aches == 'yes') {
+            $count = $count + 1;
+        }
+        if ($tasteSmell == 'yes') {
+            $count = $count + 1;
+        }
+        if ($headache == 'yes') {
+            $count = $count + 1;
+        }
+        if ($d == 'yes') {
+            $count = $count + 1;
+        }
+        if ($nausea == 'yes') {
+            $count = $count + 1;
+        }
+        if ($count1 >= 1) {
+            $status =  'NO';
+            echo 'You are not permitted into this dojo!';
+        }
+        elseif ($count >= 2) {
+            $status = 'NO';
+            echo 'You are not permitted into this dojo!';
+        }
+        else {
+            $status = 'OK';
+            echo 'You are safe to enter!';
+        }
+        $sqlInsertStatus = "UPDATE `EMPLOYEE` SET `EMP_STATUS` = '$status' WHERE `EMPLOYEE`.`EMP_ID` = $currentEmpID";
+        //Source: https://www.w3schools.com/php/php_mysql_insert.asp
+        if ($conn->query($sqlInsertStatus) === TRUE) {
+            echo "New record inserted successfully.";
+        } else {
+            echo "Error: " . $sqlInsertStatus . "<br>" . $conn->error;
+        }
+
+        /* ------FIX THIS LATER - REDIRECTS USER TO HTML PAGE IF ALREADY SUBMITTED FORM ONCE!-------
+        if ($resultCheckEntries->num_rows = 0) {
+
         } else {
             header("Location: ../submitg1.html");
         }
+        */
         $conn->close();
     }
