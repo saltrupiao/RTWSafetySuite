@@ -147,15 +147,13 @@
                                 <tbody>
                                     <tr>
                                         <td>Non-Cleared Employees</td>
-                                        <td>
-                                            <?php
-                                                $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = 'NO' GROUP by EMP_STATUS";
-                                                $resultGetNOCount = $conn->query($sqlGetNOCount);
-                                                while ($rowGetNOCount = $resultGetNOCount -> fetch_row()) {
-                                                    echo $rowGetNOCount[1];
-                                                }
-                                            ?>
-                                        </td>
+                                        <?php
+                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = 'NO' GROUP by EMP_STATUS";
+                                        $resultGetNOCount = $conn->query($sqlGetNOCount);
+                                        while ($rowGetNOCount = $resultGetNOCount -> fetch_row()) {
+                                            echo "<td>" . $rowGetNOCount[1] . "</td>";
+                                        }
+                                        ?>
                                     </tr>
                                     <tr>
                                         <td>Cleared Employees</td>
