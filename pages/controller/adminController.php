@@ -20,7 +20,8 @@
             echo "<h1>" . $rowGetStatus[0] . "</h1>";
             if ($rowGetStatus[0] = "NO") {
                 $newStatus = "YES";
-            } else {
+            }
+            if ($rowGetStatus[0] = "YES") {
                 $newStatus = "NO";
             }
             echo "<h1>" . $newStatus . "</h1>";
