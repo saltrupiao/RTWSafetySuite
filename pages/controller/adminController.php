@@ -28,6 +28,8 @@
         }
 
         $sqlSwitchStatus = "UPDATE EMPLOYEE SET EMP_STATUS = '$newStatus' WHERE EMPLOYEE.EMP_ID = $empID";
+        echo "<h1>" . $sqlSwitchStatus . "</h1>";
+
         if ($conn->query($sqlSwitchStatus) === TRUE) {
             echo "New record inserted successfully.";
             //header("Location: ../admin.php");
