@@ -156,7 +156,13 @@
                                     </tr>
                                     <tr>
                                         <td>Cleared Employees</td>
-                                        <td>x</td>
+                                        <?php
+                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = 'YES' GROUP by EMP_STATUS";
+                                        $resultGetNOCount = $conn->query($sqlGetNOCount);
+                                        while ($rowGetNOCount = $resultGetNOCount -> fetch_row()) {
+                                            echo "<td>" . $rowGetNOCount[1] . "</td>";
+                                        }
+                                        ?>
                                     </tr>
                                 </tbody>
                             </table>
