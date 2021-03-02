@@ -142,7 +142,20 @@
                     <div class="card">
                         <div class="card-header ">
                             <h5 class="card-title">Company-Wide Statistics</h5> </div>
-                        <div class="card-body "> </div>
+                        <div class="table-responsive card-body">
+                            <table class="table table-striped table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td>Non-Cleared Employees</td>
+                                        <td>x</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cleared Employees</td>
+                                        <td>x</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <div class="card-footer ">
                             <hr>
                             <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
