@@ -61,7 +61,7 @@ if($row["EMP_ISADMIN"] == "0"){
                             <h5 class="card-title">Employee Status Overview</h5> </div>
                         <div class="table-responsive card-body">
                             <div class="float-left">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-header ">
                                             <h5 class="card-title">Employee Status Overview</h5> </div>
