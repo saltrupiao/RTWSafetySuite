@@ -59,8 +59,8 @@ if($row["EMP_ISADMIN"] == "0"){
                     <div class="card">
                         <div class="card-header ">
                             <h5 class="card-title">Employee Status Overview</h5> </div>
-                        <div class="row">
                             <div class="table-responsive card-body">
+                                <div class="row">
                                 <div class="col-md-6">
                                     <div class="card">
                                         <div class="card-header ">
