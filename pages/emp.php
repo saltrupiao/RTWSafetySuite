@@ -60,16 +60,18 @@ if($row["EMP_ISADMIN"] == "0"){
                         <div class="card-header ">
                             <h5 class="card-title">Employee Status Overview</h5> </div>
                         <div class="table-responsive card-body">
-                            <div class="col-lg-6">
-                                <div class="card">
-                                    <div class="card-header ">
-                                        <h5 class="card-title">Employee Status Overview</h5> </div>
-                                    <div class="table-responsive card-body">
-                                        //insert data for the left side card here
-                                    </div>
-                                    <div class="card-footer ">
-                                        <hr>
-                                        <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
+                            <div class="float-left">
+                                <div class="col-lg-6">
+                                    <div class="card">
+                                        <div class="card-header ">
+                                            <h5 class="card-title">Employee Status Overview</h5> </div>
+                                        <div class="table-responsive card-body">
+                                            //insert data for the left side card here
+                                        </div>
+                                        <div class="card-footer ">
+                                            <hr>
+                                            <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
