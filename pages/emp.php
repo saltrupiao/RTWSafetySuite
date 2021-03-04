@@ -24,9 +24,9 @@ if($row["EMP_ISADMIN"] == "0"){
 }
 
 //html
-echo "<br>Welcome to COVID Safety Suite";
-echo "<br>";
-echo "<a href=controller/logout.php>Logout</a>";
+//echo "<br>Welcome to COVID Safety Suite";
+//echo "<br>";
+//echo "<a href=controller/logout.php>Logout</a>";
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -53,25 +53,25 @@ echo "<a href=controller/logout.php>Logout</a>";
                 </div>
             </section>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header ">
                             <h5 class="card-title">Employee Status Overview</h5> </div>
                         <div class="table-responsive card-body">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header ">
+                                        <h5 class="card-title">Employee Status Overview</h5> </div>
+                                    <div class="table-responsive card-body">
+                                        //insert data for the right side card here
+                                    </div>
+                                    <div class="card-footer ">
+                                        <hr>
+                                        <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
+                                    </div>
+                                </div>
+                            </div>
                             //insert data for the left side card here
-                        </div>
-                        <div class="card-footer ">
-                            <hr>
-                            <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header ">
-                            <h5 class="card-title">Employee Status Overview</h5> </div>
-                        <div class="table-responsive card-body">
-                            //insert data for the right side card here
                         </div>
                         <div class="card-footer ">
                             <hr>

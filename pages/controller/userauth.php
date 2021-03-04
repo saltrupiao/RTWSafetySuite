@@ -29,7 +29,7 @@
           }
           //if regular user go to emp dashboard
           else {
-              header("location: ../home.php");
+              header("location: ../emp.php");
           }
       }else {
          $error = "Your Login Name or Password is invalid";
