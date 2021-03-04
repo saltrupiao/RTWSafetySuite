@@ -39,7 +39,7 @@ if($row["EMP_ISADMIN"] == "0"){
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title> Admin Dashboard </title>
+        <title> Employee Dashboard </title>
         <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 
         <section id="nav-bar">
@@ -74,8 +74,10 @@ if($row["EMP_ISADMIN"] == "0"){
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 float-md-right">
-                                    //insert data for the right side card here
+                                <div class="float-md-right">
+                                    <div class="col-md-6">
+                                        //insert data for the right side card here
+                                    </div>
                                 </div>
                             </div>
                         </div>
