@@ -16,7 +16,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $active = $row['active'];
 if($row["EMP_ISADMIN"] == "0"){
     //ensuring regular user session
-    echo "Welcome " . " " . $emp;
+    //echo "Welcome " . " " . $emp;
 }else{
     //if not a regular user, resets back to login
     unset($emp);
