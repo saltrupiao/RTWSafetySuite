@@ -43,9 +43,9 @@ if($row["EMP_ISADMIN"] == "0"){
         <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 
         <section id="nav-bar">
-            <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a> <a class="nav-link" href="admin_manage.php">Manage Employees</a> <a class="nav-link" href="admin_distance.php">Distance Tracking</a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
+            <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Employee</b></a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
                 <a class="nav-link">
-                    <?php echo "Welcome" . " " . $adminuser; ?>
+                    <?php echo "Welcome" . " " . $emp; ?>
                 </a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i> </a>
             </div>
