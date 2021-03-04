@@ -65,7 +65,7 @@ if($row["EMP_ISADMIN"] == "0"){
                                     <div class="card-header ">
                                         <h5 class="card-title">Employee Status Overview</h5> </div>
                                     <div class="table-responsive card-body">
-                                        //insert data for the right side card here
+                                        //insert data for the left side card here
                                     </div>
                                     <div class="card-footer ">
                                         <hr>
@@ -73,7 +73,7 @@ if($row["EMP_ISADMIN"] == "0"){
                                     </div>
                                 </div>
                             </div>
-                            //insert data for the left side card here
+                            //insert data for the right side card here
                         </div>
                         <div class="card-footer ">
                             <hr>
