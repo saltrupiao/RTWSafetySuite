@@ -74,7 +74,7 @@ if($row["EMP_ISADMIN"] == "0"){
                                         </div>
                                     </div>
                                 </div>
-                                <div class="float-md-right">
+                                <div class="float-right">
                                     <div class="col-md-6">
                                         //insert data for the right side card here
                                     </div>
