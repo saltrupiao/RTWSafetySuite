@@ -73,7 +73,9 @@ if($row["EMP_ISADMIN"] == "0"){
                                     </div>
                                 </div>
                             </div>
-                            //insert data for the right side card here
+                            <div class="float-right">
+                                //insert data for the right side card here
+                            </div>
                         </div>
                         <div class="card-footer ">
                             <hr>
