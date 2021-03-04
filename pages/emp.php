@@ -60,8 +60,7 @@ if($row["EMP_ISADMIN"] == "0"){
                         <div class="card-header ">
                             <h5 class="card-title">Employee Status Overview</h5> </div>
                         <div class="table-responsive card-body">
-                            <div class="float-left">
-                                <div class="col-lg-12">
+                                <div class="col-lg-6">
                                     <div class="card">
                                         <div class="card-header ">
                                             <h5 class="card-title">Employee Status Overview</h5> </div>
@@ -74,8 +73,7 @@ if($row["EMP_ISADMIN"] == "0"){
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="float-right">
+                            <div class="col-lg-6">
                                 //insert data for the right side card here
                             </div>
                         </div>
