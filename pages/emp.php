@@ -74,7 +74,9 @@ if($row["EMP_ISADMIN"] == "0"){
                                     </div>
                                 </div>
                             <div class="col-lg-6">
-                                //insert data for the right side card here
+                                <div class="table-responsive card-body">
+                                    //insert data for the right side card here
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer ">
