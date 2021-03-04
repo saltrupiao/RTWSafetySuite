@@ -40,18 +40,20 @@ if($row["EMP_ISADMIN"] == "0"){
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title> Admin Dashboard </title>
-        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' /> </head>
+        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+
+        <section id="nav-bar">
+            <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a> <a class="nav-link" href="admin_manage.php">Manage Employees</a> <a class="nav-link" href="admin_distance.php">Distance Tracking</a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
+                <a class="nav-link">
+                    <?php echo "Welcome" . " " . $adminuser; ?>
+                </a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i> </a>
+            </div>
+        </section>
+    </head>
 
     <body>
         <div class="container-fluid">
-            <section id="nav-bar">
-                <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a> <a class="nav-link" href="admin_manage.php">Manage Employees</a> <a class="nav-link" href="admin_distance.php">Distance Tracking</a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
-                    <a class="nav-link">
-                        <?php echo "Welcome" . " " . $adminuser; ?>
-                    </a>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i> </a>
-                </div>
-            </section>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
