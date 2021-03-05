@@ -157,7 +157,7 @@
                                     <tr>
                                         <td>Cleared Employees</td>
                                         <?php
-                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = 'YES' GROUP by EMP_STATUS";
+                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = 'OK' GROUP by EMP_STATUS";
                                         $resultGetNOCount = $conn->query($sqlGetNOCount);
                                         while ($rowGetNOCount = $resultGetNOCount -> fetch_row()) {
                                             echo "<td>" . $rowGetNOCount[1] . "</td>";
@@ -196,7 +196,7 @@
                 }
             </script>
         </div>
-    <?php $conn->close(); ?>
+        <?php $conn->close(); ?>
     </body>
 
     </html>
