@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     $serverName = "localhost";
     $userName = "user";
     $password = "oakland";
@@ -9,8 +9,8 @@
 
     $newStatus = "";
 
-    if($_SERVER["REQUEST_METHOD"] == "GET") {
-        $empID = $_GET['empID'];
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $empID = $_POST['empID'];
         echo "<h1>".$empID."</h1>";
 
         $sqlGetStatus = "SELECT EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = '$empID'";
@@ -19,8 +19,8 @@
         while ($rowGetStatus = $resultGetStatus -> fetch_row()) {
             echo "<h1>" . $rowGetStatus[0] . "</h1>";
             if ($rowGetStatus[0] == "NO") {
-                $newStatus = "YES";
-                echo "<h3>NEW STATUS IS YES</h3>";
+                $newStatus = "OK";
+                echo "<h3>NEW STATUS IS OK</h3>";
             } else {
                 $newStatus = "NO";
                 echo "<h3>NEW STATUS IS NO</h3>";
