@@ -39,6 +39,7 @@ $emp_dept = $row2["EMP_DEPT"];
         <link href="../css/bootstrap.min.css" rel="stylesheet" />
         <link href="../css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
         <link href="../css/demo.css" rel="stylesheet" />
+        <link href="../css/main.css" rel="stylesheet" media="all">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -67,7 +68,153 @@ $emp_dept = $row2["EMP_DEPT"];
                                     <div class="card">
                                         <div class="card-header ">
                                             <h4 class="card-title">Employee Health Screening Form</h4> </div>
-                                        <div class="table-responsive card-body"> //insert data for the left side card here </div>
+                                        <div class="table-responsive card-body">
+                                            <div class="form-row m-b-55">
+                                                <div class="container">
+                                                    <!-- <br><h1>Company COVID-19 Health Screening Form</h1> <br>-->
+                                                    <form method="post" action="controller/empController.php">
+                                                        <h4>In the past 48 hours, have you had any of these symptoms:</h4>
+                                                        <br> Fever (100.4 or higher) or feeling feverish or chills:
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="fever" id="feverYes" value="yes">
+                                                            <label class="form-check-label" for="feverYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="fever" id="feverNo" value="no">
+                                                            <label class="form-check-label" for="feverNo">No</label>
+                                                        </div>
+                                                        <br> Uncontrolled cough that you cannot attribute to another health condition (example: allergies, asthma): &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="cough" id="coughYes" value="yes">
+                                                            <label class="form-check-label" for="coughYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="cough" id="coughNo" value="no">
+                                                            <label class="form-check-label" for="coughNo">No</label>
+                                                        </div>
+                                                        <br> Shortness of breath you cannot attribute to another health condition (example: asthma): &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="breath" id="breathYes" value="yes">
+                                                            <label class="form-check-label" for="breathYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="breath" id="breathNo" value="no">
+                                                            <label class="form-check-label" for="breathNo">No</label>
+                                                        </div>
+                                                        <br> Sore throat you cannot attribute to another health condition (example: allergies): &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="soreThroat" id="soreThroatYes" value="yes">
+                                                            <label class="form-check-label" for="soreThroatYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="soreThroat" id="soreThroatNo" value="no">
+                                                            <label class="form-check-label" for="soreThroatNo">No</label>
+                                                        </div>
+                                                        <br> Nasal congestion or runny nose you cannot attribute to another health condition (example: allergies): &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="congest" id="congestYes" value="yes">
+                                                            <label class="form-check-label" for="congestYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="congest" id="congestNo" value="no">
+                                                            <label class="form-check-label" for="congestNo">No</label>
+                                                        </div>
+                                                        <br> Muscle aches you cannot attribute to another health condition (example: injury, exercise): &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="aches" id="achesYes" value="yes">
+                                                            <label class="form-check-label" for="achesYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="aches" id="achesNo" value="no">
+                                                            <label class="form-check-label" for="achesNo">No</label>
+                                                        </div>
+                                                        <br> Loss of taste or smell that is new and you cannot attribute to another health condition: &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="tasteSmell" id="tasteSmellYes" value="yes">
+                                                            <label class="form-check-label" for="tasteSmellYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="tasteSmell" id="tasteSmellNo" value="no">
+                                                            <label class="form-check-label" for="tasteSmellNo">No</label>
+                                                        </div>
+                                                        <br> Headache that you cannot attribute to another health condition: &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="headache" id="headacheYes" value="yes">
+                                                            <label class="form-check-label" for="headacheYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="headache" id="headacheNo" value="no">
+                                                            <label class="form-check-label" for="headacheNo">No</label>
+                                                        </div>
+                                                        <br> Diarrhea you cannot attribute to another health condition (example: IBS): &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="d" id="dYes" value="yes">
+                                                            <label class="form-check-label" for="dYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="d" id="dNo" value="no">
+                                                            <label class="form-check-label" for="dNo">No</label>
+                                                        </div>
+                                                        <br> Nausea or vomiting that you cannot attribute to another health condition (example: pregnancy): &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="nausea" id="nauseaYes" value="yes">
+                                                            <label class="form-check-label" for="nauseaYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="nausea" id="nauseaNo" value="no">
+                                                            <label class="form-check-label" for="nauseaNo">No</label>
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                        <hr>
+                                                        <br>
+                                                        <h6>Answer the following questions to the best of your knowledge:</h6> Have you tested positive for COVID-19 in the past 10 days? (Only a viral test, not a blood antibody test) &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="covidPositive" id="covidPositiveYes" value="yes">
+                                                            <label class="form-check-label" for="covidPositiveYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="covidPositive" id="covidPositiveNo" value="no">
+                                                            <label class="form-check-label" for="covidPositiveNo">No</label>
+                                                        </div>
+                                                        <br> Have you had known, unprotected exposure (for healthcare workers) or close contact (within 6 feet for 15 minutes or longer) with someone diagnosed with COVID-19 in the past 14 days? &nbsp;&nbsp;
+                                                        <br>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="exposure" id="exposureYes" value="yes">
+                                                            <label class="form-check-label" for="exposureYes">Yes</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="exposure" id="exposureNo" value="no">
+                                                            <label class="form-check-label" for="exposureNo">No</label>
+                                                        </div>
+                                                        <br>
+                                                        <br>
+                                                        <hr>
+                                                        <br>
+                                                        <div class="form-group">
+                                                            <label for="signatureBox">By typing your name, you are electronically signing that your responses are accurate to the best of your knowledge:</label>
+                                                            <br>
+                                                            <br>
+                                                            <input type="text" class="form-control" id="signatureBox" name="signatureBox" placeholder="Enter Electronic Signature Here..."> </div>
+                                                        <br>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                        <br>
+                                                        <br>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card-footer">
                                             <hr>
                                             <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
