@@ -79,7 +79,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                         <div class="card-header">
                                             <!--Information box-->
                                             <h4 class="card-title">Employee Information</h4></div>
-                                        <div class="table-responsive card-body">
+                                        <div class="card-body">
                                             <h5>Name: <?php echo "$emp_name"; ?></h5>
                                             <h5>Employee ID: <?php echo "$emp_id"; ?></h5>
                                             <h5>Department: <?php echo "$emp_dept"; ?></h5> </div>
@@ -88,7 +88,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                     <div class="card">
                                         <div class="card-header">
                                             <h5 class="card-title text-center">Employee Status</h5></div>
-                                        <div class="table-responsive card-body">
+                                        <div class="card-body">
                                             <?php
                                             //if status in employee table in database is OK it displays
                                             //the green checkmark for cleared
@@ -111,7 +111,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                     <div class="card">
                                         <div class="card-header">
                                             <h5 class="card-title">Certification of Results</h5></div>
-                                        <div class="table-responsive card-body">
+                                        <div class="card-body">
                                             <p class="font-weight-bold">By submitting the Health Screening Form, you certify that your answers are accurate and truthful to the best of your abilities. Doing so ensures you and your fellow employees are kept safe.
                                                 <br>
                                                 <br>Any intentional false statements on this reporting form may result in disciplinary action in accordance with company policy.</p>
