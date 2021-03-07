@@ -214,6 +214,7 @@ else{
                                     $name = $row2["EMP_FNAME"] . " " . $row2["EMP_LNAME"];
                                     $id = $row2["EMP_USERID"];
                                     $dept = $row2["EMP_DEPT"];
+                                    $emp_id = $row2["EMP_ID"];
                                     echo "<tr><td>" . $name . "</td>"; //displays name
                                     echo "<td>" . $id . "</td> "; //displays username
                                     //password reset form
@@ -329,7 +330,8 @@ else{
                         if ($id !== $adminuser){ 
                             echo "<td>
                             <form action='controller/delete_acc.php' method='post'>
-                            <input type='hidden' name='id' value='{$id}'>
+                            <input type='hidden' name='emp_user' value='{$id}'><!--username of employee-->
+                            <input type='hidden' name='id' value='{$emp_id}'><!--employee id-->
                             <input type='submit' class='btn btn-danger' name='delete' value='DELETE'> </form>
                             </td>"; 
                         } 
@@ -347,6 +349,17 @@ else{
                         </div>
                     </div>
                 </div>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myTopnav");
+                        if (x.className === "topnav") {
+                            x.className += " responsive";
+                        }
+                        else {
+                            x.className = "topnav";
+                        }
+                    }
+                </script>
         </div>
         <!--bootsrap links-->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
