@@ -20,14 +20,14 @@
                 <h5 class="card-title">You've Aready Submitted This Form!</h5>
                 <p class="card-text">If you are seeing this message, it means you have already submitted your monitoring form for the day. Please speak to your supervisor to modify the results if you have submitted any answer in error.</p>
                 <br>
-                <p class="card-text">You will be redirected in <span id="counter">15</span> second(s)...</p>
+                <p class="card-text">You will be redirected in <span id="counter">10</span> second(s)...</p>
             </div>
         </div>
         <script type="text/javascript">
             function countdown() {
                 var i = document.getElementById('counter');
                 if (parseInt(i.innerHTML) <= 0) {
-                    location.href = 'home.php';
+                    location.href = 'emp.php';
                 }
                 if (parseInt(i.innerHTML) != 0) {
                     i.innerHTML = parseInt(i.innerHTML) - 1;
@@ -35,7 +35,7 @@
             }
             setInterval(function() {
                 countdown();
-            }, 1500);
+            }, 1000);
 
         </script>
     </div>
