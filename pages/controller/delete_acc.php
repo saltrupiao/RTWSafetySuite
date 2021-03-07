@@ -8,14 +8,15 @@ $dbName = "rtwdb";
 // Create connection
 $conn = mysqli_connect($serverName, $userName , $password, $dbName);
 //using get to grab the value of user id
-$userid = mysqli_real_escape_string($conn,$_POST['id']);
+$id = mysqli_real_escape_string($conn,$_POST['id']);
+$employee_user = mysqli_real_escape_string($conn,$_POST['emp_user']);
 //query to delete row of user id
-$sql = "DELETE FROM EMPLOYEE WHERE EMP_USERID = '$userid'";
+$sql = "DELETE FROM EMPLOYEE WHERE EMP_ID = '$id'";
 $result = mysqli_query($conn,$sql);
 if ($result)
 {
     //if deletion query successful it will stay on management page
-    $_SESSION['del_message'] = "Employee with username $userid has been deleted" ;
+    $_SESSION['del_message'] = "Employee with username $employee_user has been deleted" ;
     header("location:../admin_manage.php");
 }
 else
