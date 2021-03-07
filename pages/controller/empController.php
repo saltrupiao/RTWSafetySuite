@@ -120,6 +120,8 @@
         //Source: https://www.w3schools.com/php/php_mysql_insert.asp
         if ($conn->query($sqlInsertStatus) === TRUE) {
             echo "New record inserted successfully.";
+            //if query successful location should stay on emp dashboard
+            header("location:../emp.php");
         } else {
             echo "Error: " . $sqlInsertStatus . "<br>" . $conn->error;
         }
