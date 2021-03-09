@@ -383,7 +383,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                         </div>-->
                                         <div class="card-footer">
                                             <hr>
-                                            <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
+                                            <div class="stats"><a href="emp.php"><i class="fa fa-history"></i></a> Refresh </div>
                                         </div>
                                     </div>
                                 </div>
