@@ -46,7 +46,7 @@
     <body>
         <div class="container-fluid">
             <section id="nav-bar">
-                <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a> <a class="nav-link" href="admin_manage.php">Manage Employees</a> <a class="nav-link" href="admin_distance.php">Distance Tracking</a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
+                <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a> <a class="nav-link" href="admin_manage.php">Manage Employees</a> <a class="nav-link" href="admin_distance.php">Distance Tracking</a> <a class="nav-link" href="admin_symp_history.php">Employee Submission History</a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
                     <a class="nav-link">
                         <?php echo "Welcome" . " " . $adminuser; ?>
                     </a>
@@ -131,7 +131,7 @@
                         </div>
                         <div class="card-footer ">
                             <hr>
-                            <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
+                            <div class="stats"> <a href="admin.php"><i class="fa fa-history"></i></a> Refresh </div>
                         </div>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
                         </div>
                         <div class="card-footer ">
                             <hr>
-                            <div class="stats"> <i class="fa fa-history"></i> This is the footer </div>
+                            <div class="stats"> <a href="admin.php"><i class="fa fa-history"></i></a> Refresh </div>
                         </div>
                     </div>
                 </div>

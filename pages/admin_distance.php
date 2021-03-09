@@ -44,7 +44,7 @@ if($row["EMP_ISADMIN"] == "1"){
     <body>
         <div class="container-fluid">
             <section id="nav-bar">
-                <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a> <a class="nav-link" href="admin_manage.php">Manage Employees</a> <a class="nav-link" href="admin_distance.php">Distance Tracking</a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
+                <div class="topnav" id="myTopnav"> <a href="admin.php"><b>Return To Work Safety Suite - Admin</b></a> <a class="nav-link" href="admin_manage.php">Manage Employees</a> <a class="nav-link" href="admin_distance.php">Distance Tracking</a> <a class="nav-link" href="admin_symp_history.php">Employee Submission History</a> <a class="nav-link" href="./controller/logout.php">LOGOUT&nbsp;</a>
                     <a class="nav-link">
                         <?php echo "Welcome" . " " . $adminuser; ?>
                     </a>
