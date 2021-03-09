@@ -73,8 +73,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                 <div class="col-md-6">
                                     <div class="card">
                                         <div class="card-header ">
-                                            <h4 class="card-title">Employee Health Screening Form</h4>
-                                        </div>
+                                            <h4 class="card-title">Employee Health Screening Form</h4> </div>
                                         <?php
                                             $currentDate = date("Y-m-d");
                                             $sqlMostRecentRecord = "SELECT EMP_DATE_INSERT FROM EMP_SYMPTOMS WHERE EMP_DATE_INSERT = '$currentDate' AND EMP_ID = '$emp_id'";
@@ -235,7 +234,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                         </div>';
                                             }
                                         ?>
-                                        <!--<div class="table-responsive card-body">
+                                            <!--<div class="table-responsive card-body">
                                             <div class="form-row m-b-55">
                                                 <div class="container">
                                                     <form method="post" action="controller/empController.php">
@@ -381,10 +380,10 @@ $emp_dept = $row2["EMP_DEPT"];
                                                 </div>
                                             </div>
                                         </div>-->
-                                        <div class="card-footer">
-                                            <hr>
-                                            <div class="stats"><a href="emp.php"><i class="fa fa-history"></i></a> Refresh </div>
-                                        </div>
+                                            <div class="card-footer">
+                                                <hr>
+                                                <div class="stats"><a href="emp.php"><i class="fa fa-history"></i></a> Refresh </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
