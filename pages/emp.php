@@ -229,8 +229,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br>
                                                         <button type="submit" class="btn btn-primary">Submit</button>
                                                         <br>
-                                                        <br>
-                                                    </form>
+                                                        <br> </form>
                                                 </div>
                                             </div>
                                         </div>';

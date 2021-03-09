@@ -7,21 +7,25 @@ $password = "oakland";
 $dbName = "rtwdb";
 // Create connection
 $conn = mysqli_connect($serverName, $userName , $password, $dbName);
-//using get to grab the value of user id
-$userid = mysqli_real_escape_string($conn,$_POST['id']);
-//query to delete row of user id
-$sql = "DELETE FROM EMPLOYEE WHERE EMP_USERID = '$userid'";
+//grabbing id and username
+$id = mysqli_real_escape_string($conn,$_POST['id']);
+$employee_user = mysqli_real_escape_string($conn,$_POST['emp_user']);
+//query to delete row of user in symptom table to delete the foreign key
+$sql = "DELETE FROM EMP_SYMPTOMS WHERE EMP_ID = '$id'";
+//query to delete the employee based on primary key
+$sql2 = "DELETE FROM EMPLOYEE WHERE EMP_ID = '$id'";
 $result = mysqli_query($conn,$sql);
-if ($result)
+$result2 = mysqli_query($conn,$sql2);
+if ($conn->query ($sql) == TRUE && $conn->query ($sql2) == TRUE )
 {
     //if deletion query successful it will stay on management page
-    $_SESSION['del_message'] = "Employee with username $userid has been deleted" ;
+    $_SESSION['del_message'] = "Employee with username $employee_user has been deleted" ;
     header("location:../admin_manage.php");
 }
 else
 {
-    echo "Error deleting row";
+    echo "Error deleting row. Could be a connection error.";
 }
-echo "<a href=../admin_manage.php>Homepage</a>";
+echo "<a href=../admin_manage.php>Return to Account Management</a>";
 
 ?>

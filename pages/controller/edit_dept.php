@@ -7,20 +7,21 @@
     // Create connection
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
     //grabs dept selection from dropdown menu in emp table
-    $userid = mysqli_real_escape_string($conn,$_POST['id']);
+    $id = mysqli_real_escape_string($conn,$_POST['id']);
     $dept = mysqli_real_escape_string($conn,$_POST['newdept']);
-    $sql = "UPDATE EMPLOYEE SET EMP_DEPT = '$dept' WHERE EMP_USERID = '$userid'";
+    $employee_user = mysqli_real_escape_string($conn,$_POST['emp_user']);
+    $sql = "UPDATE EMPLOYEE SET EMP_DEPT = '$dept' WHERE EMP_ID = '$id'";
     $result = mysqli_query($conn,$sql);
-if ($result)
+if ($conn->query ($sql) == TRUE)
 {
     //if update query successful it will stay on management page
     //also creates a success message 
-    $_SESSION['dept_message'] = "Department updated to $dept for $userid" ;
+    $_SESSION['dept_message'] = "Department updated to $dept for $employee_user" ;
     header("location:../admin_manage.php");
 }
 else
 {
-    echo "Error updating department";
+    echo "Error updating department. Could be a connection error.";
 }
-echo "<a href=../admin_manage.php>Homepage</a>";
+echo "<a href=../admin_manage.php>Return to Account Management</a>";
 ?>

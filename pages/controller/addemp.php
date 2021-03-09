@@ -36,8 +36,8 @@ $serverName = "localhost";
         {
             //if not successful link to return to management page
             echo "Could not add record: " . $conn->connect_error . "<br>";
-            echo "<a href../admin_manage.php>Return to Account Management</a>";
+            echo "<a href=../admin_manage.php>Return to Account Management</a>";
         }
    }
-echo "<a href=../admin_manage.php>Homepage</a>";
+echo "<a href=../admin_manage.php>Return to Account Management</a>";
 ?>

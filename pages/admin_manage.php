@@ -214,12 +214,14 @@ else{
                                     $name = $row2["EMP_FNAME"] . " " . $row2["EMP_LNAME"];
                                     $id = $row2["EMP_USERID"];
                                     $dept = $row2["EMP_DEPT"];
+                                    $emp_id = $row2["EMP_ID"];
                                     echo "<tr><td>" . $name . "</td>"; //displays name
                                     echo "<td>" . $id . "</td> "; //displays username
-                                    //password reset form
-                                    echo "<td><a href='#exampleModal2' data-bs-toggle='modal' class='btn btn-success'>RESET</a>
+                                    //password reset form, pass php values through link and id to be used in modal
+                                    //since modal is outside of loop and can't auto populate data itself
+                                    echo "<td><a href='#exampleModal2-$id-$emp_id' data-bs-toggle='modal' class='btn btn-success'>RESET</a>
                                 <!-- Modal -->
-                                <div class='modal fade' id='exampleModal2' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                                <div class='modal fade' id='exampleModal2-$id-$emp_id' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                                     <div class='modal-dialog'>
                                         <div class='modal-content'>
                                             <div class='modal-header'>
@@ -228,12 +230,13 @@ else{
                                             </div>
                                         <div class='modal-body'>
                                             <form action='controller/pwreset.php' method='post'>
-                                            <label class='form-label text-dark fw-bolder'>Username:</label>
-                                            <input type='text' name='uname' class='form-control' id='' value='' required>
+                                            <label class='form-label text-dark fw-bolder'>Username: $id</label>
                                             <br>
                                             <label class='form-label text-dark fw-bolder'>New Password:</label>
                                             <input type='text' name='pw' class='form-control' required>
                                             <br>
+                                            <input type='hidden' name='uname' value='{$id}'>
+                                            <input type='hidden' name='id' value='{$emp_id}'>
                                             <input type='submit' value='Reset Password' class='btn btn-primary btn btn-info'> </form>
                                         </div>
                                     <div class='modal-footer'>
@@ -255,7 +258,8 @@ else{
                                         <option value='Maintenance'>Maintenance</option>
                                         <option value='Marketing'>Marketing</option>
                                         </select>
-                                        <input type='hidden' name='id' value='{$id}'>
+                                        <input type='hidden' name='emp_user' value='{$id}'>
+                                        <input type='hidden' name='id' value='{$emp_id}'>
                                         <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
                                     } 
                                     if ($dept == 'Sales'){ 
@@ -268,7 +272,8 @@ else{
                                         <option value='Maintenance'>Maintenance</option>
                                         <option value='Marketing'>Marketing</option>
                                         </select>
-                                        <input type='hidden' name='id' value='{$id}'>
+                                        <input type='hidden' name='emp_user' value='{$id}'>
+                                        <input type='hidden' name='id' value='{$emp_id}'>
                                         <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
                                     } 
                                     if ($dept == 'HR'){ 
@@ -281,7 +286,8 @@ else{
                                         <option value='Maintenance'>Maintenance</option>
                                         <option value='Marketing'>Marketing</option>
                                         </select>
-                                        <input type='hidden' name='id' value='{$id}'>
+                                        <input type='hidden' name='emp_user' value='{$id}'>
+                                        <input type='hidden' name='id' value='{$emp_id}'>
                                         <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
                                     } 
                                     if ($dept == 'Purchasing'){ 
@@ -294,7 +300,8 @@ else{
                                     <option value='Maintenance'>Maintenance</option>
                                     <option value='Marketing'>Marketing</option>
                                     </select>
-                                    <input type='hidden' name='id' value='{$id}'>
+                                    <input type='hidden' name='emp_user' value='{$id}'>
+                                    <input type='hidden' name='id' value='{$emp_id}'>
                                     <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
                                     } 
                                     if ($dept == 'Maintenance'){ 
@@ -307,7 +314,8 @@ else{
                                         <option value='Purchasing'>Purchasing</option>
                                         <option value='Marketing'>Marketing</option>
                                         </select>
-                                        <input type='hidden' name='id' value='{$id}'>
+                                        <input type='hidden' name='emp_user' value='{$id}'>
+                                        <input type='hidden' name='id' value='{$emp_id}'>
                                         <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
                                     } 
                                     if ($dept == 'Marketing'){ 
@@ -320,22 +328,25 @@ else{
                                         <option value='Purchasing'>Purchasing</option>
                                         <option value='Maintenance'>Maintenance</option>
                                         </select>
-                                        <input type='hidden' name='id' value='{$id}'>
+                                        <input type='hidden' name='emp_user' value='{$id}'>
+                                        <input type='hidden' name='id' value='{$emp_id}'>
                                         <input type='submit' value='Save' class='btn btn-'> </form>"; 
                                     } 
                                     echo "</td>";
                                     
-                        //if not current user who's logged in the delete action will be present
+                        //if not current user who's logged in the delete action will be active
                         if ($id !== $adminuser){ 
                             echo "<td>
                             <form action='controller/delete_acc.php' method='post'>
-                            <input type='hidden' name='id' value='{$id}'>
+                            <input type='hidden' name='emp_user' value='{$id}'><!--username of employee-->
+                            <input type='hidden' name='id' value='{$emp_id}'><!--employee id-->
                             <input type='submit' class='btn btn-danger' name='delete' value='DELETE'> </form>
                             </td>"; 
                         } 
                         else { 
-                        //if it is the current admins row then it displays nothing for the table data, just keeps the background color for the row 
-                            echo "<td></td>"; 
+                        //if it is the current admins row then it displays disabled delete button so current admin won't
+                        //accidentally delete their own account
+                            echo "<td><input type='submit' class='btn btn-danger' name='delete' value='DELETE' disabled></td>"; 
                         }                
                         echo "</tr>";
                 }
@@ -347,8 +358,19 @@ else{
                         </div>
                     </div>
                 </div>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myTopnav");
+                        if (x.className === "topnav") {
+                            x.className += " responsive";
+                        }
+                        else {
+                            x.className = "topnav";
+                        }
+                    }
+                </script>
         </div>
-        <!--bootsrap links-->
+        <!--bootstrap links-->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     </body>
