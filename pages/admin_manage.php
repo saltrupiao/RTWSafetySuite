@@ -55,7 +55,13 @@ else{
             <?php
             //selecting all records
         $sql2 = "SELECT * FROM EMPLOYEE";
+        //selecting all departments
+        $sql3 = "SELECT * FROM DEPARTMENTS";
+        
         $result2 = mysqli_query($conn,$sql2);
+        $result3 = mysqli_query($conn,$sql3);
+            
+            
         if ($result2->num_rows > 0) {     
         //when dept is updated a success message will appear above table
         //gets global variable from backend php logic for updating dept
@@ -169,12 +175,23 @@ else{
                                                     <select name='dept' id='dept' class='form-select' required>
                                                         <!--validation from required statement won't allow for form submit without choosing an option with a value-->
                                                         <option value=''>[SELECT]</option>
-                                                        <option value='IT'>IT</option>
-                                                        <option value='Sales'>Sales</option>
-                                                        <option value='HR'>HR</option>
-                                                        <option value='Purchasing'>Purchasing</option>
-                                                        <option value='Maintenance'>Maintenance</option>
-                                                        <option value='Marketing'>Marketing</option>
+                                                        <?php 
+                                                            if ($result3->num_rows > 0) { 
+                                                                while($row3 = $result3->fetch_assoc()) {
+                                                                    $dept_choices = $row3["DEPARTMENT_NAME"];
+                                                                    echo "<option value='{$dept_choices}'>{$dept_choices}</option>";
+                                                                }
+                                        
+                                                            } else {
+                                                                echo "No Departments";
+                                                            }
+                                                        ?>
+                                                            <!--<option value='IT'>IT</option>
+                                                            <option value='Sales'>Sales</option>
+                                                            <option value='HR'>HR</option>
+                                                            <option value='Purchasing'>Purchasing</option>
+                                                            <option value='Maintenance'>Maintenance</option>
+                                                            <option value='Marketing'>Marketing</option>-->
                                                     </select>
                                                     <br>
                                                     <label class='form-label text-dark fw-bolder'>Password:</label>
@@ -204,6 +221,7 @@ else{
                                             <th scope="col">User ID</th>
                                             <th scope="col">Password</th>
                                             <th scope="col">Department</th>
+                                            <th scope="col">Update Department</th>
                                             <th scope="col">Delete</th>
                                         </tr>
                                     </thead>
@@ -215,8 +233,11 @@ else{
                                     $id = $row2["EMP_USERID"];
                                     $dept = $row2["EMP_DEPT"];
                                     $emp_id = $row2["EMP_ID"];
+                                    
+                                    //start of table data
                                     echo "<tr><td>" . $name . "</td>"; //displays name
                                     echo "<td>" . $id . "</td> "; //displays username
+                                        
                                     //password reset form, pass php values through link and id to be used in modal
                                     //since modal is outside of loop and can't auto populate data itself
                                     echo "<td><a href='#exampleModal2-$id-$emp_id' data-bs-toggle='modal' class='btn btn-success'>RESET</a>
@@ -246,93 +267,27 @@ else{
                                 </div>
                             </div>
                             </td>";
-                                //creates different dropdown menu based off current dept 
-                                    echo "<td>";
-                                    if ($dept == 'IT'){ 
-                                        echo "<form action='controller/edit_dept.php' method='post'>
+                                        
+                                //creates different dropdown menu based off current dept from departments table in db
+                                //had to use separate result query variable for this one bc add emp code uses similar while loop
+                                $result4 = mysqli_query($conn,$sql3);
+                                echo "<td>". $dept . "</td>";
+                                echo "<td><form action='controller/edit_dept.php' method='post'>
                                         <select name='newdept' id='dept' class='fs-6'>
-                                        <option value='IT'>{$dept}</option>
-                                        <option value='Sales'>Sales</option>
-                                        <option value='HR'>HR</option>
-                                        <option value='Purchasing'>Purchasing</option>
-                                        <option value='Maintenance'>Maintenance</option>
-                                        <option value='Marketing'>Marketing</option>
-                                        </select>
+                                            <option value=''>SELECT NEW</option>";
+                                if ($result4->num_rows > 0) { 
+                                    while($row4 = $result4->fetch_assoc()) {
+                                        $dep_choices = $row4["DEPARTMENT_NAME"];
+                                        echo "<option value='{$dep_choices}'>{$dep_choices}</option>";
+                                    }
+                                        
+                                } else {
+                                    echo "No Departments";
+                                }
+                                echo "</select>
                                         <input type='hidden' name='emp_user' value='{$id}'>
                                         <input type='hidden' name='id' value='{$emp_id}'>
-                                        <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
-                                    } 
-                                    if ($dept == 'Sales'){ 
-                                        echo "<form action='controller/edit_dept.php' method='post'>
-                                        <select name='newdept' id='dept' class='fs-6'>
-                                        <option value='Sales'>{$dept}</option>
-                                        <option value='IT'>IT</option>
-                                        <option value='HR'>HR</option>
-                                        <option value='Purchasing'>Purchasing</option>
-                                        <option value='Maintenance'>Maintenance</option>
-                                        <option value='Marketing'>Marketing</option>
-                                        </select>
-                                        <input type='hidden' name='emp_user' value='{$id}'>
-                                        <input type='hidden' name='id' value='{$emp_id}'>
-                                        <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
-                                    } 
-                                    if ($dept == 'HR'){ 
-                                        echo "<form action='controller/edit_dept.php' method='post'>
-                                        <select name='newdept' id='dept' class='fs-6'>
-                                        <option value='HR'>{$dept}</option>
-                                        <option value='IT'>IT</option>
-                                        <option value='Sales'>Sales</option>
-                                        <option value='Purchasing'>Purchasing</option>
-                                        <option value='Maintenance'>Maintenance</option>
-                                        <option value='Marketing'>Marketing</option>
-                                        </select>
-                                        <input type='hidden' name='emp_user' value='{$id}'>
-                                        <input type='hidden' name='id' value='{$emp_id}'>
-                                        <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
-                                    } 
-                                    if ($dept == 'Purchasing'){ 
-                                    echo "<form action='controller/edit_dept.php' method='post'>
-                                    <select name='newdept' id='dept' class='fs-6'>
-                                    <option value='Purchasing'>{$dept}</option>
-                                    <option value='IT'>IT</option>
-                                    <option value='Sales'>Sales</option>
-                                    <option value='HR'>HR</option>
-                                    <option value='Maintenance'>Maintenance</option>
-                                    <option value='Marketing'>Marketing</option>
-                                    </select>
-                                    <input type='hidden' name='emp_user' value='{$id}'>
-                                    <input type='hidden' name='id' value='{$emp_id}'>
-                                    <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
-                                    } 
-                                    if ($dept == 'Maintenance'){ 
-                                        echo "<form action='controller/edit_dept.php' method='post'>
-                                        <select name='newdept' id='dept' class='fs-6'>
-                                        <option value='Maintenance'>{$dept}</option>
-                                        <option value='IT'>IT</option>
-                                        <option value='Sales'>Sales</option>
-                                        <option value='HR'>HR</option>
-                                        <option value='Purchasing'>Purchasing</option>
-                                        <option value='Marketing'>Marketing</option>
-                                        </select>
-                                        <input type='hidden' name='emp_user' value='{$id}'>
-                                        <input type='hidden' name='id' value='{$emp_id}'>
-                                        <input type='submit' value='Save' class='btn btn-secondary'> </form>"; 
-                                    } 
-                                    if ($dept == 'Marketing'){ 
-                                        echo "<form action='controller/edit_dept.php' method='post'>
-                                        <select name='newdept' id='dept' class='fs-6'>
-                                        <option value='Marketing'>{$dept}</option>
-                                        <option value='IT'>IT</option>
-                                        <option value='Sales'>Sales</option>
-                                        <option value='HR'>HR</option>
-                                        <option value='Purchasing'>Purchasing</option>
-                                        <option value='Maintenance'>Maintenance</option>
-                                        </select>
-                                        <input type='hidden' name='emp_user' value='{$id}'>
-                                        <input type='hidden' name='id' value='{$emp_id}'>
-                                        <input type='submit' value='Save' class='btn btn-'> </form>"; 
-                                    } 
-                                    echo "</td>";
+                                        <input type='submit' value='Save' class='btn btn-secondary'> </form></td>"; 
                                     
                         //if not current user who's logged in the delete action will be active
                         if ($id !== $adminuser){ 
