@@ -66,15 +66,20 @@
                                         <th scope="col">Status</th>
                                         <th scope="col">Fever</th>
                                         <th scope="col">Cough</th>
-                                        <th scope="col">Shortness of Breath</th>
+                                        <th scope="col">Shortness
+                                            <br>of Breath</th>
                                         <th scope="col">Congestion</th>
                                         <th scope="col">Aches</th>
-                                        <th scope="col">Loss of Taste/Smell</th>
+                                        <th scope="col">Loss of
+                                            <br>Taste/Smell</th>
                                         <th scope="col">Headache</th>
                                         <th scope="col">Diarrhea</th>
                                         <th scope="col">Nausea</th>
-                                        <th scope="col">COVID Positive</th>
-                                        <th scope="col">COVID Exposed</th>
+                                        <th scope="col">COVID
+                                            <br>Positive</th>
+                                        <th scope="col">COVID
+                                            <br>Exposed</th>
+                                        <th scope="col">SIGNATURE</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -105,6 +110,7 @@
                                         $nausea = $rowTable['SYMP_NAUS'];
                                         $covidPositive = $rowTable['SYMP_COVIDPOS'];
                                         $covidExposed = $rowTable['SYMP_COVIDEXPOS'];
+                                        $empSignature = $rowTable['EMP_SIGNATURE'];
                                         echo "<tr>";
                                         echo '<td>'.$empFullName.'</td>';
                                         echo '<td>'.$status.'</td>';
@@ -119,6 +125,7 @@
                                         echo '<td>'.$nausea.'</td>';
                                         echo '<td>'.$covidPositive.'</td>';
                                         echo '<td>'.$covidExposed.'</td>';
+                                        echo '<td>'.$empSignature.'</td>';
                                         echo '<td><form action="./controller/adminController.php" method="post"><input type="hidden" id="empID" name="empID" value="'.$empID.'"><button type="submit" class="btn btn-danger" value="Submit">OVERRIDE</button></form></td>';
                                         echo "</tr>";
                                     }
