@@ -55,8 +55,8 @@
         echo "<h1>" . $sqlCheckEntries . "</h1>";
         $resultCheckEntries = $conn->query($sqlCheckEntries);
 
-        $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`) 
-                                              VALUES (NULL, '$currentEmpID', '$currentDate', '$cough', '$breath', '$fever', NULL, '$aches', '$headache', '$tasteSmell', '$soreThroat', '$congest', '$nausea', '$d', '$covidPositive', '$exposure', NULL)";
+        $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`, `EMP_SIGNATURE`) 
+                                              VALUES (NULL, '$currentEmpID', '$currentDate', '$cough', '$breath', '$fever', NULL, '$aches', '$headache', '$tasteSmell', '$soreThroat', '$congest', '$nausea', '$d', '$covidPositive', '$exposure', NULL, '$signatureBox')";
 
         //Source: https://www.w3schools.com/php/php_mysql_insert.asp
         if ($conn->query($sqlInsert) === TRUE) {
