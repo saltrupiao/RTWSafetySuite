@@ -95,17 +95,17 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Fever (100.4 or higher) or feeling feverish or chills:
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="fever" id="feverYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="fever" id="feverYes" value="yes" required>
                                                             <label class="form-check-label" for="feverYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="fever" id="feverNo" value="no">
+                                                            <input class="form-check-input" type="radio" name="fever" id="feverNo" value="no>
                                                             <label class="form-check-label" for="feverNo">No</label>
                                                         </div>
                                                         <br> Uncontrolled cough that you cannot attribute to another health condition (example: allergies, asthma): &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="cough" id="coughYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="cough" id="coughYes" value="yes" required>
                                                             <label class="form-check-label" for="coughYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -115,7 +115,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Shortness of breath you cannot attribute to another health condition (example: asthma): &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="breath" id="breathYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="breath" id="breathYes" value="yes" required>
                                                             <label class="form-check-label" for="breathYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -125,7 +125,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Sore throat you cannot attribute to another health condition (example: allergies): &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="soreThroat" id="soreThroatYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="soreThroat" id="soreThroatYes" value="yes" required>
                                                             <label class="form-check-label" for="soreThroatYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -135,7 +135,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Nasal congestion or runny nose you cannot attribute to another health condition (example: allergies): &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="congest" id="congestYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="congest" id="congestYes" value="yes" required>
                                                             <label class="form-check-label" for="congestYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -145,7 +145,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Muscle aches you cannot attribute to another health condition (example: injury, exercise): &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="aches" id="achesYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="aches" id="achesYes" value="yes" required>
                                                             <label class="form-check-label" for="achesYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -155,7 +155,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Loss of taste or smell that is new and you cannot attribute to another health condition: &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="tasteSmell" id="tasteSmellYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="tasteSmell" id="tasteSmellYes" value="yes" required>
                                                             <label class="form-check-label" for="tasteSmellYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -165,7 +165,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Headache that you cannot attribute to another health condition: &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="headache" id="headacheYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="headache" id="headacheYes" value="yes" required>
                                                             <label class="form-check-label" for="headacheYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -175,7 +175,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Diarrhea you cannot attribute to another health condition (example: IBS): &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="d" id="dYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="d" id="dYes" value="yes" required>
                                                             <label class="form-check-label" for="dYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -185,7 +185,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Nausea or vomiting that you cannot attribute to another health condition (example: pregnancy): &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="nausea" id="nauseaYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="nausea" id="nauseaYes" value="yes" required>
                                                             <label class="form-check-label" for="nauseaYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -199,7 +199,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <h6>Answer the following questions to the best of your knowledge:</h6> Have you tested positive for COVID-19 in the past 10 days? (Only a viral test, not a blood antibody test) &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="covidPositive" id="covidPositiveYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="covidPositive" id="covidPositiveYes" value="yes" required>
                                                             <label class="form-check-label" for="covidPositiveYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
@@ -209,7 +209,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                                         <br> Have you had known, unprotected exposure (for healthcare workers) or close contact (within 6 feet for 15 minutes or longer) with someone diagnosed with COVID-19 in the past 14 days? &nbsp;&nbsp;
                                                         <br>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="exposure" id="exposureYes" value="yes">
+                                                            <input class="form-check-input" type="radio" name="exposure" id="exposureYes" value="yes" required>
                                                             <label class="form-check-label" for="exposureYes">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
