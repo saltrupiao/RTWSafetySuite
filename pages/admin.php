@@ -41,7 +41,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title> Admin Dashboard </title>
-        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' /> </head>
+        <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+        <style>
+            /*font style for employee signature*/
+            
+            .signature {
+                font-family: cursive;
+            }
+        </style>
+    </head>
 
     <body>
         <div class="container-fluid">
@@ -125,7 +133,7 @@
                                         echo '<td>'.$nausea.'</td>';
                                         echo '<td>'.$covidPositive.'</td>';
                                         echo '<td>'.$covidExposed.'</td>';
-                                        echo '<td>'.$empSignature.'</td>';
+                                        echo '<td class=signature>'.$empSignature.'</td>';
                                         echo '<td><form action="./controller/adminController.php" method="post"><input type="hidden" id="empID" name="empID" value="'.$empID.'"><button type="submit" class="btn btn-danger" value="Submit">OVERRIDE</button></form></td>';
                                         echo "</tr>";
                                     }
