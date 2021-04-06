@@ -120,7 +120,7 @@
                                         $covidPositive = $rowTable['SYMP_COVIDPOS'];
                                         $covidExposed = $rowTable['SYMP_COVIDEXPOS'];
                                         $empSignature = $rowTable['EMP_SIGNATURE'];
-                                        if ($status = "OK") {
+                                        if ($status == "OK") {
                                             echo "<tr style=background:lightgreen;>";
                                         } else {
                                             echo "<tr style=background:lightcoral;>";
