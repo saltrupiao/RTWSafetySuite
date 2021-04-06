@@ -124,7 +124,7 @@
                                         } else {
                                             echo "<tr style=background:red;>";
                                         }
-                                        echo "<tr>";
+                                        //echo "<tr>";
                                         echo '<td>'.$empFullName.'</td>';
                                         echo '<td>'.$status.'</td>';
                                         echo '<td>'.$fever.'</td>';
