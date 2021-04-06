@@ -104,7 +104,6 @@
                                             $empFname = $rowFLName['EMP_FNAME'];
                                             $empLname = $rowFLName['EMP_LNAME'];
                                             $status = $rowFLName['EMP_STATUS'];
-                                            echo "<h1>$status</h1>";
                                         }
                                         $empFullName = $empFname . " " . $empLname;
 
