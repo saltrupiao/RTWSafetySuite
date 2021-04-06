@@ -120,9 +120,9 @@
                                         $covidExposed = $rowTable['SYMP_COVIDEXPOS'];
                                         $empSignature = $rowTable['EMP_SIGNATURE'];
                                         if ($status = "OK") {
-                                            echo "<tr style=background:green;>";
+                                            echo "<tr style=background:lightgreen;>";
                                         } else {
-                                            echo "<tr style=background:red;>";
+                                            echo "<tr style=background:lightcoral;>";
                                         }
                                         //echo "<tr>";
                                         echo '<td>'.$empFullName.'</td>';
