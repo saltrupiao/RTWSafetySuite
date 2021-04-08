@@ -28,16 +28,20 @@ def capture():
 
         recordCmd = subprocess.Popen(vlcCmdFull, stdout=subprocess.PIPE, shell=True, preexec_fn=os.setsid)
 
+        print("Sleeping for 30 seconds...")
         time.sleep(30)
+        print("Sleeping for 30 seconds done!")
         os.killpg(os.getpgid(recordCmd.pid), signal.SIGTERM)
 
+        print("executing detection commands!")
         fnSize = len(fn)
         detectionCmd = "time python3 social_distance_detector.py --input " + fn + " --output " + fn[:fnSize-4] + ".avi"
         print("Executing Detection Command:", detectionCmd)
         os.system(detectionCmd)
 
-        time.sleep(25)
         print("Sleeping for 25 seconds...")
+        time.sleep(25)
+        print("Sleeping for 25 seconds done!")
 
 
 def main():
