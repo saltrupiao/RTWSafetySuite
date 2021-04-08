@@ -36,12 +36,14 @@ def capture():
         print("executing detection commands!")
         fnSize = len(fn)
         detectionCmd = "time python3 social_distance_detector.py --input " + fn + " --output " + fn[:fnSize-4] + ".avi"
+        detectionCmdExecute = subprocess.Popen(detectionCmd, stdout=subprocess.PIPE, shell=True, preexec_fn=os.setsid)
         print("Executing Detection Command:", detectionCmd)
-        os.system(detectionCmd)
+
 
         print("Sleeping for 25 seconds...")
-        time.sleep(25)
+        time.sleep(55)
         print("Sleeping for 25 seconds done!")
+
 
 
 def main():
