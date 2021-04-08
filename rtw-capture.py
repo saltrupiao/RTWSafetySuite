@@ -29,11 +29,11 @@ def capture():
         recordCmd = subprocess.Popen(vlcCmdFull, stdout=subprocess.PIPE, shell=True, preexec_fn=os.setsid)
 
         print("Sleeping for 30 seconds...")
-        time.sleep(15)
+        time.sleep(30)
         print("Sleeping for 30 seconds done!")
         os.killpg(os.getpgid(recordCmd.pid), signal.SIGTERM)
-        print("Cooldown of 10 seconds")
-        time.sleep(10)
+        print("Cooldown of 5 seconds")
+        time.sleep(5)
 
 
         print("executing detection commands!")
