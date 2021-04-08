@@ -31,12 +31,13 @@ def capture():
         time.sleep(30)
         os.killpg(os.getpgid(recordCmd.pid), signal.SIGTERM)
 
-        time.sleep(25)
-
         fnSize = len(fn)
         detectionCmd = "time python3 social_distance_detector.py --input " + fn + " --output " + fn[:fnSize-4] + ".avi"
         print("Executing Detection Command:", detectionCmd)
         os.system(detectionCmd)
+
+        time.sleep(25)
+        print("Sleeping for 25 seconds...")
 
 
 def main():
