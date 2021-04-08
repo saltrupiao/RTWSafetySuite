@@ -33,7 +33,7 @@ def capture():
         print("Sleeping for 30 seconds done!")
         os.killpg(os.getpgid(recordCmd.pid), signal.SIGTERM)
         print("Cooldown of 5 seconds")
-        time.sleep(5)
+        time.sleep(10)
 
 
         print("executing detection commands!")
