@@ -76,7 +76,21 @@ if($row["EMP_ISADMIN"] == "1"){
                                             </tr>
                                             <tbody>
                                                 <tr>
-                                                    <td> <span></span> </td>
+                                                    <td> <span>
+                                                            <?php
+                                                            echo "Here are the files for our screenshots<br><br>";
+                                                            $path = "/usr/share/fileupload/home/reed/Desktop/social-distance-detector/output_videos/";
+                                                            $dh = opendir($path);
+                                                            $i=1;
+                                                            while (($file = readdir($dh)) !== false) {
+                                                                if($file != "." && $file != ".." && $file != "sample.php" && $file != ".htaccess" && $file != "error_log" && $file != "cgi-bin") {
+                                                                    echo "<a href='/userdata/home/reed/Desktop/social-distance-detector/output_videos/$file' target='_blank'>$file</a><br /><br />";
+                                                                    $i++;
+                                                                }
+                                                            }
+                                                            closedir($dh);
+                                                            ?>
+                                                        </span> </td>
                                                 </tr>
                                             </tbody>
                                         </table>
