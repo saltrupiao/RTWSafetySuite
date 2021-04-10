@@ -76,7 +76,7 @@ if($row["EMP_ISADMIN"] == "1"){
                                             </tr>
                                             <tbody>
                                                 <tr>
-                                                    <td> <span>[Video Feed Shows Here]</span> </td>
+                                                    <td> <span></span> </td>
                                                 </tr>
                                             </tbody>
                                         </table>
