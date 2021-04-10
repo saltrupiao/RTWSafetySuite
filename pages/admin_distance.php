@@ -85,7 +85,7 @@ if($row["EMP_ISADMIN"] == "1"){
                                                             while (($file = readdir($dh)) !== false) {
                                                                 if($file != "." && $file != ".." && $file != "sample.php" && $file != ".htaccess" && $file != "error_log" && $file != "cgi-bin") {
                                                                     echo "<a href='/userdata/home/reed/Desktop/social-distance-detector/output_videos/$file'>$file</a><br /><br />";
-                                                                    echo "<object data='/userdata/home/reed/Desktop/social-distance-detector/output_videos/$file.avi' width='640' height='480'> <param name='src' value='/userdata/home/reed/Desktop/social-distance-detector/output_videos/$file.avi' /> </object>";
+                                                                    echo "<object data='/userdata/home/reed/Desktop/social-distance-detector/output_videos/$file' width='640' height='480'> <param name='src' value='/userdata/home/reed/Desktop/social-distance-detector/output_videos/$file' /> </object>";
                                                                     $i++;
                                                                 }
                                                             }
