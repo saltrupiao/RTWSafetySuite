@@ -47,6 +47,9 @@ def capture():
 
 
         print("Sleeping for 25 seconds...")
+        rsyncCmd = f"rsync -e \"ssh -o StrictHostKeyChecking=no\" -aR {fnOutput} saldtrup@35.223.86.91:/usr/share/fileupload/{fnOutput}"
+        print("RSyncing File to Server: ", rsyncCmd)
+        os.system(rsyncCmd)
         time.sleep(25)
         print("Sleeping for 25 seconds done!")
 
