@@ -38,17 +38,20 @@ def capture():
 
         print("executing detection commands!")
         fnSize = len(fn)
-        fnOutput = "/home/reed/Desktop/social-distance-detector/output_videos/" + fn[:fnSize-4] + ".mp4"
-        fnRsyncPath = fn[:fnSize-4] + ".mp4"
-        detectionCmd = "time python3 social_distance_detector.py --input /home/reed/Desktop/social-distance-detector/input_videos/" + fn + " --output " + fnOutput
+        fnOutputAvi = "/home/reed/Desktop/social-distance-detector/output_videos/" + fn[:fnSize-4] + ".avi"
+        fnOutputMp4 = "/home/reed/Desktop/social-distance-detector/output_videos/" + fn[:fnSize-4] + ".mp4"
+        detectionCmd = "time python3 social_distance_detector.py --input /home/reed/Desktop/social-distance-detector/input_videos/" + fn + " --output " + fnOutputAvi
         print("DetectionCMD: ", detectionCmd)
         # subprocess.call("test.sh", shell=True, preexec_fn=os.setsid)
         os.system(detectionCmd)
         # print("Executing Detection Command:", detectionCmd)
 
+        ffmpegCmd = f"ffmpeg -i {fnOutputAvi} {fnOutputMp4}"
+        print("Calling ffmpeg for media conversion...", ffmpegCmd)
+        os.system(ffmpegCmd)
 
         print("Sleeping for 25 seconds...")
-        rsyncCmd = f"rsync -e \"ssh -o StrictHostKeyChecking=no\" -aR {fnOutput} saldtrup@35.223.86.91:/usr/share/fileupload/"
+        rsyncCmd = f"rsync -e \"ssh -o StrictHostKeyChecking=no\" -aR {fnOutputMp4} saldtrup@35.223.86.91:/usr/share/fileupload/"
         print("RSyncing File to Server: ", rsyncCmd)
         os.system(rsyncCmd)
         time.sleep(25)
