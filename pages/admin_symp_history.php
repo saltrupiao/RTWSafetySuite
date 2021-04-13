@@ -216,7 +216,7 @@
                                         <th scope="col">
                                             <input type="date" class="filter" data-field="Submit Date" id="Date" name="Date"> </th>
                                         <p style="text-align:right; font-size:9pt;">Reset Date: Press backspace
-                                            <br>until fields are mm/dd/yyyy</p>
+                                            <br>until all fields are mm/dd/yyyy</p>
                                     </tr>
                                 </thead>
                                 <tbody id="myTable">
