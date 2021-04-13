@@ -28,6 +28,9 @@
     $currentDate = date("Y-m-d");
     $sqlTable = "SELECT * FROM EMP_SYMPTOMS";
     $resultTable = $conn->query($sqlTable);
+    //gettig employee names for table filter
+    $sql3 = "SELECT EMP_FNAME, EMP_LNAME FROM EMPLOYEE";
+    $result3 = mysqli_query($conn,$sql3);
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -48,6 +51,17 @@
             .signature {
                 font-family: cursive;
             }
+            /*css for hiding rows that don't match filter on table*/
+            
+            .hidden-row {
+                display: none;
+            }
+            /*aligning cell data with headers*/
+            
+            td,
+            th {
+                text-align: center;
+            }
         </style>
     </head>
 
@@ -67,31 +81,145 @@
                         <div class="card-header ">
                             <h5 class="card-title">Employee Status History</h5> </div>
                         <div class="table-responsive card-body">
-                            <table class="table table-striped table-hover">
+                            <!--<input id="myInput" type="text" placeholder="Search..">-->
+                            <!--line between potential search bar and table-->
+                            <hr />
+                            <table class="table table-striped table-hover filter-table">
                                 <thead>
                                     <tr>
                                         <th scope="col">Name</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Fever</th>
                                         <th scope="col">Cough</th>
-                                        <th scope="col">Shortness
-                                            <br>of Breath</th>
+                                        <th scope="col">Shortness of Breath</th>
                                         <th scope="col">Congestion</th>
                                         <th scope="col">Aches</th>
-                                        <th scope="col">Loss of
-                                            <br>Taste/Smell</th>
+                                        <th scope="col">Loss of Taste/Smell</th>
                                         <th scope="col">Headache</th>
                                         <th scope="col">Diarrhea</th>
                                         <th scope="col">Nausea</th>
-                                        <th scope="col">COVID
-                                            <br>Positive</th>
-                                        <th scope="col">COVID
-                                            <br>Exposed</th>
+                                        <th scope="col">COVID Positive</th>
+                                        <th scope="col">COVID Exposed</th>
                                         <th scope="col">SIGNATURE</th>
                                         <th scope="col">Submit Date</th>
                                     </tr>
+                                    <tr>
+                                        <th scope="col">
+                                            <select class="filter" id="name_sort" data-field="Name">
+                                                <option value="">All</option>
+                                                <?php 
+                                            //filter for names grabs all employee names from employee table so that it 
+                                            //populates options without duplicates and new employees will be auto added to 
+                                            //the dropdown even without a form submission in the history yet
+                                                            if ($result3->num_rows > 0) { 
+                                                                while($row3 = $result3->fetch_assoc()) {
+                                                                    $name = $row3["EMP_FNAME"] . " " . $row3["EMP_LNAME"];
+                                                                    echo "<option value='{$name}'>{$name}</option>";
+                                                                }
+                                        
+                                                            } else {
+                                                                echo "No Employees";
+                                                            }
+                                                        ?>
+                                                    <!--hardcoded values for initial testing just to see if names worked
+                                                    <option value="Carmia Smith">Carmia Smith</option>
+                                            <option value="John Doe">John Doe</option>-->
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Status">
+                                                <option value="">All</option>
+                                                <option value="OK">OK</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Fever">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Cough">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Shortness of Breath">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Congestion">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Aches">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Loss of Taste/Smell">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Headache">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Diarrhea">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="Nausea">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="COVID Positive">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th scope="col">
+                                            <select class="filter" data-field="COVID Exposed">
+                                                <option value="">All</option>
+                                                <option value="no">no</option>
+                                                <option value="yes">yes</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <!--empty table data for space since signature doesn't have sorting-->
+                                        </th>
+                                        <th scope="col">
+                                            <input type="date" class="filter" data-field="Submit Date" id="Date" name="Date"> </th>
+                                        <p style="text-align:right; font-size:9pt;">Reset Date: Press backspace
+                                            <br>until fields are mm/dd/yyyy</p>
+                                    </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="myTable">
                                     <?php
                                 //Logic base reference: https://www.w3schools.com/php/php_mysql_select.asp
                                 if ($resultTable->num_rows > 0) {
@@ -120,7 +248,7 @@
                                         $covidExposed = $rowTable['SYMP_COVIDEXPOS'];
                                         $insertDate = $rowTable['EMP_DATE_INSERT'];
                                         $empSignature = $rowTable['EMP_SIGNATURE'];
-                                        echo "<tr>";
+                                        echo "<tr class='content'>";
                                         echo '<td>'.$empFullName.'</td>';
                                         echo '<td>'.$status.'</td>';
                                         echo '<td>'.$fever.'</td>';
@@ -152,18 +280,59 @@
                     </div>
                 </div>
             </div>
-            <script>
-                function myFunction() {
-                    var x = document.getElementById("myTopnav");
-                    if (x.className === "topnav") {
-                        x.className += " responsive";
-                    }
-                    else {
-                        x.className = "topnav";
-                    }
-                }
-            </script>
         </div>
+        <!--links for the table filtering with jquery
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+        <!-- Include all compiled plugins (below), or include individual files as needed 
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+        <script type="text/javascript">
+            //filters 
+            var table = document.querySelector('.filter-table')
+                , filterState = {};
+            var dataFromRow = (row, headers) => Object.fromEntries([...row.querySelectorAll('td')].map((td, index) => [headers[index], td.textContent]));
+            var matchesCriteria = (rowData, filters) => filters.every(([key, value]) => rowData[key] === value);
+            var refresh = () => {
+                var headers = [...table.querySelectorAll('thead th')].map(th => th.textContent)
+                    , filters = Object.entries(filterState)
+                    , showAll = filters.length === 0;
+                table.querySelectorAll('tbody tr').forEach(row => {
+                    var show = showAll || matchesCriteria(dataFromRow(row, headers), filters);
+                    row.classList.toggle('hidden-row', !show);
+                });
+            };
+            var handleFilterChange = (e) => {
+                var field = e.target.dataset.field
+                    , value = e.target.value;
+                if (value) {
+                    filterState[field] = value;
+                }
+                else {
+                    delete filterState[field];
+                }
+                refresh();
+            };
+            document.querySelectorAll('.filter').forEach(filter => filter.addEventListener('change', handleFilterChange));
+            //function for nav bar
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                }
+                else {
+                    x.className = "topnav";
+                }
+            }
+            //function for search bar
+            //$(document).ready(function () {
+            //$("#myInput").on("keyup", function () {
+            //var value = $(this).val().toLowerCase();
+            //$("#myTable tr").filter(function () {
+            //$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            //});
+            //});
+            //});
+        </script>
         <?php $conn->close(); ?>
     </body>
 

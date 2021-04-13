@@ -47,6 +47,13 @@
             
             .signature {
                 font-family: cursive;
+                text-align: center;
+            }
+            /*centered text for table headers and data in main table*/
+            
+            .heading,
+            .data {
+                text-align: center;
             }
         </style>
     </head>
@@ -70,25 +77,25 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Fever</th>
-                                        <th scope="col">Cough</th>
-                                        <th scope="col">Shortness
+                                        <th scope="col" class="heading">Name</th>
+                                        <th scope="col" class="heading">Status</th>
+                                        <th scope="col" class="heading">Fever</th>
+                                        <th scope="col" class="heading">Cough</th>
+                                        <th scope="col" class="heading">Shortness
                                             <br>of Breath</th>
-                                        <th scope="col">Congestion</th>
-                                        <th scope="col">Aches</th>
-                                        <th scope="col">Loss of
+                                        <th scope="col" class="heading">Congestion</th>
+                                        <th scope="col" class="heading">Aches</th>
+                                        <th scope="col" class="heading">Loss of
                                             <br>Taste/Smell</th>
-                                        <th scope="col">Headache</th>
-                                        <th scope="col">Diarrhea</th>
-                                        <th scope="col">Nausea</th>
-                                        <th scope="col">COVID
+                                        <th scope="col" class="heading">Headache</th>
+                                        <th scope="col" class="heading">Diarrhea</th>
+                                        <th scope="col" class="heading">Nausea</th>
+                                        <th scope="col" class="heading">COVID
                                             <br>Positive</th>
-                                        <th scope="col">COVID
+                                        <th scope="col" class="heading">COVID
                                             <br>Exposed</th>
-                                        <th scope="col">SIGNATURE</th>
-                                        <th scope="col">Actions</th>
+                                        <th scope="col" class="heading">SIGNATURE</th>
+                                        <th scope="col" class="heading">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -125,21 +132,21 @@
                                             echo "<tr style=background:lightcoral;>";
                                         }
                                         //echo "<tr>";
-                                        echo '<td>'.$empFullName.'</td>';
-                                        echo '<td>'.$status.'</td>';
-                                        echo '<td>'.$fever.'</td>';
-                                        echo '<td>'.$cough.'</td>';
-                                        echo '<td>'.$shortnessBreath.'</td>';
-                                        echo '<td>'.$congestion.'</td>';
-                                        echo '<td>'.$aches.'</td>';
-                                        echo '<td>'.$lossTasteSmell.'</td>';
-                                        echo '<td>'.$headache.'</td>';
-                                        echo '<td>'.$d.'</td>';
-                                        echo '<td>'.$nausea.'</td>';
-                                        echo '<td>'.$covidPositive.'</td>';
-                                        echo '<td>'.$covidExposed.'</td>';
-                                        echo '<td class=signature>'.$empSignature.'</td>';
-                                        echo '<td><form action="./controller/adminController.php" method="post"><input type="hidden" id="empID" name="empID" value="'.$empID.'"><button type="submit" class="btn btn-secondary" value="Submit">OVERRIDE</button></form></td>';
+                                        echo '<td class="data">'.$empFullName.'</td>';
+                                        echo '<td class="data">'.$status.'</td>';
+                                        echo '<td class="data">'.$fever.'</td>';
+                                        echo '<td class="data">'.$cough.'</td>';
+                                        echo '<td class="data">'.$shortnessBreath.'</td>';
+                                        echo '<td class="data">'.$congestion.'</td>';
+                                        echo '<td class="data">'.$aches.'</td>';
+                                        echo '<td class="data">'.$lossTasteSmell.'</td>';
+                                        echo '<td class="data">'.$headache.'</td>';
+                                        echo '<td class="data">'.$d.'</td>';
+                                        echo '<td class="data">'.$nausea.'</td>';
+                                        echo '<td class="data">'.$covidPositive.'</td>';
+                                        echo '<td class="data">'.$covidExposed.'</td>';
+                                        echo '<td class="signature">'.$empSignature.'</td>';
+                                        echo '<td class="data"><form action="./controller/adminController.php" method="post"><input type="hidden" id="empID" name="empID" value="'.$empID.'"><button type="submit" class="btn btn-secondary" value="Submit">OVERRIDE</button></form></td>';
                                         echo "</tr>";
                                     }
                                 } else {
