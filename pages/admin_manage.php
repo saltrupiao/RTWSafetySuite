@@ -140,6 +140,25 @@ else{
         else {
         $pwmsg = null;
         }
+      //when new department is added and is successful it shows success message
+        if (!empty($_SESSION['newdept_message'])) {
+            $newdeptmsg = $_SESSION['newdept_message'];
+            //shows message
+            echo "<div class='card text-center'>
+                    <div class='card-body d-flex justify-content-center'>
+                        <div class='alert alert-warning alert-dismissible fade show card w-50 ' role='alert'> <strong> <p class='fs-6 text-center fw-bolder fs-4'>Success! $newdeptmsg</p></strong>
+                        <a href='javascript:location.reload(true)' class='btn-close'></a>
+                        </div>
+                    </div>
+                </div>";
+            //click x button to get rid of message, reloads page to kill session variable
+            //kills session variable when page refreshes
+            unset ($_SESSION['newdept_message']);
+        } 
+        //when page refreshes the messsage goes back to being empty until next addition
+        else {
+        $newdeptmsg = null;
+        }      
             
     } else {
             echo "O results";
@@ -161,7 +180,7 @@ else{
                                                 <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                                             </div>
                                             <div class='modal-body'>
-                                                <form action='controller/addemp.php' method='post'>
+                                                <form action='controller/addemp.php' method='post' name='form1'>
                                                     <label class='form-label text-dark fw-bolder'>First Name:</label>
                                                     <input required type='text' name='fname' class='form-control' required>
                                                     <br>
@@ -195,7 +214,7 @@ else{
                                                     </select>
                                                     <br>
                                                     <label class='form-label text-dark fw-bolder'>Password:</label>
-                                                    <input required type='text' name='pw' class='form-control' required>
+                                                    <input required type='text' name='pw' class='form-control' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters' class='form-control' required>
                                                     <br>
                                                     <label class='form-label text-dark fw-bolder'>Administrator or Regular User:</label>
                                                     <br>
@@ -203,6 +222,45 @@ else{
                                                         <input type='radio' name='usertype' value='Administrator' class='form-check-input' required> Admistrator</div>
                                                     <div class='form-check form-check-inline'>
                                                         <input type='radio' name='usertype' value='Regular User' class='form-check-input' required> Regular User </div>
+                                                    <br>
+                                                    <input type='submit' value='Add' class='btn btn-primary btn btn-info'> </form>
+                                            </div>
+                                            <div class='modal-footer'>
+                                                <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='d-grid gap-2 d-md-flex justify-content-md-end'>
+                                <button class='btn btn-primary btn-lg btn btn-info' data-bs-toggle='modal' data-bs-target='#exampleModaldept'>Add Department</button>
+                                <div class='modal fade' id='exampleModaldept' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                                    <div class='modal-dialog'>
+                                        <div class='modal-content'>
+                                            <div class='modal-header'>
+                                                <h5 class='modal-title' id='exampleModaldept'>Add a Department</h5>
+                                                <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                            </div>
+                                            <div class='modal-body'>
+                                                <form action='controller/add_dept.php' method='post' name='form1'>
+                                                    <label class='form-label text-dark fw-bolder'>Current Departments:
+                                                        <?php 
+                                                        $addDep_result = mysqli_query($conn,$sql3);
+                                                            if ($addDep_result->num_rows > 0) { 
+                                                                while($row5 = $addDep_result->fetch_assoc()) {
+                                                                    $choices = $row5["DEPARTMENT_NAME"];
+                                                                    echo"<ul>" . $choices . "</ul>" ;
+                                                                }
+                                        
+                                                            } else {
+                                                                echo "No Departments";
+                                                            }
+                                                        ?>
+                                                    </label>
+                                                    <br>
+                                                    <label class='form-label text-dark fw-bolder'>Department:</label>
+                                                    <br>
+                                                    <input required type='text' name='adddept' class='form-control' required>
                                                     <br>
                                                     <input type='submit' value='Add' class='btn btn-primary btn btn-info'> </form>
                                             </div>
@@ -254,7 +312,7 @@ else{
                                             <label class='form-label text-dark fw-bolder'>Username: $id</label>
                                             <br>
                                             <label class='form-label text-dark fw-bolder'>New Password:</label>
-                                            <input type='text' name='pw' class='form-control' required>
+                                            <input type='text' name='pw' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters' class='form-control' required>
                                             <br>
                                             <input type='hidden' name='uname' value='{$id}'>
                                             <input type='hidden' name='id' value='{$emp_id}'>
@@ -292,7 +350,7 @@ else{
                         //if not current user who's logged in the delete action will be active
                         if ($id !== $adminuser){ 
                             echo "<td>
-                            <form action='controller/delete_acc.php' method='post'>
+                            <form action='controller/delete_acc.php' method='post' onsubmit='return confirm(\"Are you sure you want to delete this user?\")'>
                             <input type='hidden' name='emp_user' value='{$id}'><!--username of employee-->
                             <input type='hidden' name='id' value='{$emp_id}'><!--employee id-->
                             <input type='submit' class='btn btn-danger' name='delete' value='DELETE'> </form>
