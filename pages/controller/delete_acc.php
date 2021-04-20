@@ -16,7 +16,7 @@ $sql = "DELETE FROM EMP_SYMPTOMS WHERE EMP_ID = '$id'";
 $sql2 = "DELETE FROM EMPLOYEE WHERE EMP_ID = '$id'";
 $result = mysqli_query($conn,$sql);
 $result2 = mysqli_query($conn,$sql2);
-if ($conn->query ($sql) == TRUE && $conn->query ($sql2) == TRUE )
+if ($result == TRUE && $result2 == TRUE )
 {
     //if deletion query successful it will stay on management page
     $_SESSION['del_message'] = "Employee with username $employee_user has been deleted" ;

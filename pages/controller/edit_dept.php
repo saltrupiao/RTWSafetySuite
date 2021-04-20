@@ -12,7 +12,7 @@
     $employee_user = mysqli_real_escape_string($conn,$_POST['emp_user']);
     $sql = "UPDATE EMPLOYEE SET EMP_DEPT = '$dept' WHERE EMP_ID = '$id'";
     $result = mysqli_query($conn,$sql);
-if ($conn->query ($sql) == TRUE)
+if ($result == TRUE)
 {
     //if update query successful it will stay on management page
     //also creates a success message 
