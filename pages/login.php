@@ -19,7 +19,7 @@
     <div class="container">
         <?php
             if (empty($_SESSION["error"])) {
-                echo "NO ERROR";
+
             } else {
                 echo "<div class=\"card text-dark bg-warning mb-3\">
             <div class=\"card-header\">LOGIN ERROR</div>
