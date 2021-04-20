@@ -15,6 +15,19 @@ $serverName = "localhost";
        $dept = mysqli_real_escape_string($conn,$_POST['dept']);
        $pass = mysqli_real_escape_string($conn,$_POST['pw']);
        $usertype = mysqli_real_escape_string($conn,$_POST['usertype']);
+       //if regex isn't working on frontend this code is backup also testing for correct pattern
+    $lowercase = preg_match('@[a-z]@', $pass);
+    $uppercase = preg_match('@[A-Z]@', $pass);
+    $number = preg_match('@[0-9]@', $pass);
+    if (strlen($pass) < 8 || !$number || !$uppercase || !$lowercase) {
+            //if password doesn't meet requirments the script stops running
+           exit("Password must contain at least one number, one uppercase letter, one lowercase letter, and contain at least 8 characters <a href=../admin_manage.php>Return to Account Management</a>");
+       } else {
+        //if password meets requirements continue on with script
+    }
+       //secure password hash
+       $hash = password_hash($pass,PASSWORD_DEFAULT);
+       $hashpass = $hash;
        //varaiable to store 0 or 1 for admin accounts
        $type = "";
        //assigning 0 or 1 for admin variable
@@ -26,7 +39,7 @@ $serverName = "localhost";
            $type = '0';
        }
       //query to add an employee
-      $sql = "INSERT INTO EMPLOYEE (EMP_FNAME, EMP_LNAME, EMP_USERID, EMP_DEPT, EMP_PW, EMP_ISADMIN) VALUES ('$fname', '$lname', '$uname', '$dept', '$pass', '$type')";
+      $sql = "INSERT INTO EMPLOYEE (EMP_FNAME, EMP_LNAME, EMP_USERID, EMP_DEPT, EMP_PW, EMP_ISADMIN) VALUES ('$fname', '$lname', '$uname', '$dept', '$hashpass', '$type')";
        if ($conn->query ($sql) == TRUE) {
             //if successful new employee shows up in table 
            header("location:../admin_manage.php");
@@ -35,8 +48,8 @@ $serverName = "localhost";
         else
         {
             //if not successful link to return to management page
-            echo "Could not add record: " . $conn->connect_error . "<br>";
-            echo "<a href=../admin_manage.php>Return to Account Management</a>";
+            echo "Could not add record: " . $conn->connect_error . "<br>Possible the username entered already exists.<br>";
+            //echo "<a href=../admin_manage.php>Return to Account Management</a>";
         }
    }
 echo "<a href=../admin_manage.php>Return to Account Management</a>";

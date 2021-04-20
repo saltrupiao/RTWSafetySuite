@@ -10,11 +10,23 @@
     $userid = mysqli_real_escape_string($conn,$_POST['uname']);
     $newpw = mysqli_real_escape_string($conn,$_POST['pw']);
     $emp_id = mysqli_real_escape_string($conn,$_POST['id']);
-    //if somehow wrong username is entered in reset form the password will still be updated 
-    //because it's updating based off emp_id number not user id
-    $sql = "UPDATE EMPLOYEE SET EMP_PW = '$newpw' WHERE EMP_ID = '$emp_id'";
+    //if regex isn't working on frontend this code is backup also testing for correct pattern
+    $lowercase = preg_match('@[a-z]@', $newpw);
+    $uppercase = preg_match('@[A-Z]@', $newpw);
+    $number = preg_match('@[0-9]@', $newpw);
+    if (strlen($newpw) < 8 || !$number || !$uppercase || !$lowercase) {
+            //if password doesn't meet requirements script stops running 
+           exit("Password must contain at least one number, one uppercase letter, one lowercase letter, and contain at least 8 characters <a href=../admin_manage.php>Return to Account Management</a>");
+       } else {
+        //if password meets requirements continue running the script
+    }
+    //secure password hash
+    $hash = password_hash($newpw,PASSWORD_DEFAULT);
+    $hashednewpass = $hash;
+    //updating based off emp_id number not user id
+    $sql = "UPDATE EMPLOYEE SET EMP_PW = '$hashednewpass' WHERE EMP_ID = '$emp_id'";
     $result = mysqli_query($conn,$sql);
-if ($conn->query ($sql) == TRUE)
+if ($result == TRUE)
 {
     //if successful it stays on emp management and creates temp success message
     $_SESSION['pw_message'] = "Password updated for $userid" ;
