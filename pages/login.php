@@ -17,6 +17,13 @@
 
 <body>
     <div class="container">
+        <?php
+            if (empty($_SESSION["error"])) {
+                echo "NO ERROR";
+            } else {
+                echo "<h1>Invalid Username or Password</h1>";
+            }
+        ?>
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
