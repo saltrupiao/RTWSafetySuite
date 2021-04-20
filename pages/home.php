@@ -20,7 +20,7 @@ if($row["EMP_ISADMIN"] == "0"){
 }else{
     //if not a regular user, resets back to login
     unset($emp);
-    header("location: login.html");
+    header("location: login.php");
 }
 
 //html 

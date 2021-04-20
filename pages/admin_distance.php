@@ -23,7 +23,7 @@ if($row["EMP_ISADMIN"] == "1"){
 }else{
     //if not an admin, resets back to login
     unset($adminuser);
-    header("location: login.html");
+    header("location: login.php");
 }
 ?>
     <!DOCTYPE html>

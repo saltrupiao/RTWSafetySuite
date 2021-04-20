@@ -23,7 +23,7 @@
     }else{
         //if not an admin, resets back to login
         unset($adminuser);
-        header("location: login.html");
+        header("location: login.php");
     }
     $currentDate = date("Y-m-d");
     $sqlTable = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_DATE_INSERT = '$currentDate'";
