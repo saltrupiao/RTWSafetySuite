@@ -21,7 +21,13 @@
             if (empty($_SESSION["error"])) {
                 echo "NO ERROR";
             } else {
-                echo "<h1>Invalid Username or Password</h1>";
+                echo "<div class=\"card text-dark bg-warning mb-3\">
+            <div class=\"card-header\">LOGIN ERROR</div>
+            <div class=\"card-body\">
+                <h5 class=\"card-title\">Invalid Login Credentials</h5>
+                <p class=\"card-text\">If you are seeing this message, it means that either your username or password is incorrect. Please speak to your administrator to reset this password.</p>
+            </div>
+        </div>";
             }
         ?>
         <div class="row">
