@@ -46,6 +46,6 @@
                     //echo "<h1>$sql</h1>";
                 }
         }
-      
+      echo "$count";
    }
 ?>
