@@ -24,7 +24,7 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
             if($count == 1) {
                 //checking password after unhashing
-                if (password_verify($mypassword, $row['EMP_PW']) == TRUE) {
+                if (password_verify($mypassword, $row["EMP_PW"]) == TRUE) {
                     $_SESSION['login_user'] = $myusername;
                     //if isadmin row is 1 then go to admin dashboard
                     if ($row["EMP_ISADMIN"]== "1"){
