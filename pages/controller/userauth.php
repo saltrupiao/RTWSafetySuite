@@ -21,7 +21,7 @@
       $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername'";
       echo "<h1>$sql</h1>";
       $result = mysqli_query($conn,$sql);
-      echo $result;
+       echo "<h1>$result</h1>";
        // echo "result:$result";
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
