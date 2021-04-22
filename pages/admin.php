@@ -7,7 +7,7 @@
     $serverName = "localhost";//always stays the same between local and main server
     $userName = "user";
     $password = "oakland";
-    $dbName = "test";
+    $dbName = "rtwdb";
 
     // Create connection
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
