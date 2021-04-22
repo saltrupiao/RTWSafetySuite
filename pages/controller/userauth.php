@@ -18,6 +18,8 @@
       // username and password sent from form
       $myusername = mysqli_real_escape_string($conn,$_POST['username']);
       $mypassword = mysqli_real_escape_string($conn,$_POST['password']);
+      echo $myusername;
+      echo $mypassword;
       $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername'";
       echo "<h1>$sql</h1>";
       $result = mysqli_query($conn,$sql);
