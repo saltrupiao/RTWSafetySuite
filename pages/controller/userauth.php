@@ -21,11 +21,11 @@
       $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername'";
       echo "<h1>$sql</h1>";
       $result = mysqli_query($conn,$sql);
+      echo $result;
        // echo "result:$result";
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       $count = mysqli_num_rows($result);
-        echo $count;
       // If result matched $myusername and $mypassword, table row must be 1 row
             if($count == 1) {
                 //checking password after unhashing
