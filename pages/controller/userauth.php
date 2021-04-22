@@ -10,6 +10,7 @@
     $dbName = "rtwdb";
     // Create connection
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
+    echo $conn;
     //if ($conn->connect_error) {
         //die("Connection failed: " . $conn->connect_error);
         //echo '<script> console.log("Connection to db failed");</script>';
@@ -27,7 +28,7 @@
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       $count = mysqli_num_rows($result);
-      echo $count
+      echo $count;
       // If result matched $myusername and $mypassword, table row must be 1 row
             if($count == 1) {
 
