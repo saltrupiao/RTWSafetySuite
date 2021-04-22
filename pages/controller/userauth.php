@@ -23,13 +23,14 @@
       $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername'";
       echo "<h1>$sql</h1>";
       $result = mysqli_query($conn,$sql);
-       //echo "result:$result";
+      echo "result:$result";
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       $count = mysqli_num_rows($result);
-        
+      echo $count
       // If result matched $myusername and $mypassword, table row must be 1 row
             if($count == 1) {
+
                 //checking password after unhashing
                 if (password_verify($mypassword, $row["EMP_PW"]) == TRUE) {
                     $_SESSION['login_user'] = $myusername;
@@ -39,7 +40,7 @@
                     }
                     //if regular user go to emp dashboard
                     else {
-                        header("location: ../../emp.php");
+                        header("location: ../emp.php");
                     }
                 } else {
                     $error = "Your Login Name or Password is invalid";
