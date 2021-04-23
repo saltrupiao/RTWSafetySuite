@@ -41,7 +41,7 @@
                 } else {
                     $error = "Your Login Name or Password is invalid";
                     $_SESSION["error"] = $error;
-                    header("location: ../login.php");
+                    // header("location: ../login.php");
                     //echo "<h1>$error</h1>";
                     //echo "<h1>$sql</h1>";
                 }
