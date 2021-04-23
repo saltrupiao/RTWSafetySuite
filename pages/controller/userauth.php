@@ -18,7 +18,7 @@
       // username and password sent from form
       $myusername = mysqli_real_escape_string($conn,$_POST['username']);
       $mypassword = mysqli_real_escape_string($conn,$_POST['password']);
-      $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$myusername'";
+      $sql = "SELECT EMP_USERID, EMP_PW, EMP_ISADMIN FROM employee WHERE EMP_USERID = '$myusername'";
       echo "<h1>$sql</h1>";
       $result = mysqli_query($conn,$sql);
       echo "<h1>result: $result</h1>";
