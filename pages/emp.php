@@ -76,7 +76,7 @@ $emp_dept = $row2["EMP_DEPT"];
                                             <h4 class="card-title">Employee Health Screening Form</h4> </div>
                                         <?php
                                             $currentDate = date("Y-m-d");
-                                            $sqlMostRecentRecord = "SELECT EMP_DATE_INSERT FROM EMP_SYMPTOMS WHERE EMP_DATE_INSERT = '$currentDate' AND EMP_ID = '$emp_id'";
+                                            $sqlMostRecentRecord = "SELECT EMP_DATE_INSERT FROM emp_symptoms WHERE EMP_DATE_INSERT = '$currentDate' AND EMP_ID = '$emp_id'";
                                             $resultsMostRecentRecord = $conn->query($sqlMostRecentRecord);
                                             if ($resultsMostRecentRecord -> num_rows > 0) {
                                                 echo "<div class='table-responsive card-body'>
