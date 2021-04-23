@@ -10,7 +10,6 @@
     $dbName = "rtwdb";
     // Create connection
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
-    echo $conn, $dbName, $password, $userName, $serverName;
     //if ($conn->connect_error) {
         //die("Connection failed: " . $conn->connect_error);
         //echo '<script> console.log("Connection to db failed");</script>';
