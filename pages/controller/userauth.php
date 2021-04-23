@@ -27,13 +27,14 @@
       $count = mysqli_num_rows($result);
       // If result matched $myusername and $mypassword, table row must be 1 row
         if($count == 1) {
-           echo "this is in the first if statement";
+           echo "this is in the first if statement\n";
                 //checking password after unhashing
                 if (password_verify($mypassword, $row["EMP_PW"]) == TRUE) {
-                    echo "password has successful";
+                    echo "password has successful\n";
                     $_SESSION['login_user'] = $myusername;
                     //if isadmin row is 1 then go to admin dashboard
                     if ($row["EMP_ISADMIN"]== "0"){
+                        echo "this is the admin page if ";
                        // header("location: ../admin.php");
                     }
                     //if regular user go to emp dashboard
