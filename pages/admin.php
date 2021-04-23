@@ -13,7 +13,7 @@
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
 
     //selecting the is admin
-    $sql = "SELECT EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$adminuser'";
+    $sql = "SELECT EMP_ISADMIN FROM employee WHERE EMP_USERID = '$adminuser'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $active = $row['active'];
