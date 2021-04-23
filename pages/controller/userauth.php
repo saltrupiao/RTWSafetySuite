@@ -33,12 +33,13 @@
                     echo "password has successful\n";
                     $_SESSION['login_user'] = $myusername;
                     //if isadmin row is 1 then go to admin dashboard
-                    if ($row["EMP_ISADMIN"]== "0"){
+                    if ($row["EMP_ISADMIN"]== "1"){
                         echo "this is the admin page if ";
                        // header("location: ../admin.php");
                     }
                     //if regular user go to emp dashboard
                     else {
+                        echo "This is the employee if statement";
                       //  header("location: ../emp.php");
                     }
                 } else {
