@@ -15,7 +15,7 @@
         //die("Connection failed: " . $conn->connect_error);
         //echo '<script> console.log("Connection to db failed");</script>';
     //}
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
       $myusername = mysqli_real_escape_string($conn,$_POST['username']);
       $mypassword = mysqli_real_escape_string($conn,$_POST['password']);
@@ -50,5 +50,5 @@
                 }
         }
       echo "$count";
-   }
+    }
 ?>
