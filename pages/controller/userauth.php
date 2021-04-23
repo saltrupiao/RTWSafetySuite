@@ -31,7 +31,7 @@
                 if (password_verify($mypassword, $row["EMP_PW"]) == TRUE) {
                     $_SESSION['login_user'] = $myusername;
                     //if isadmin row is 1 then go to admin dashboard
-                    if ($row["EMP_ISADMIN"]== "1"){
+                    if ($row["EMP_ISADMIN"]== "0"){
                         header("location: ../admin.php");
                     }
                     //if regular user go to emp dashboard
