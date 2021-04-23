@@ -29,6 +29,7 @@
         if($count == 1) {
                 //checking password after unhashing
                 if (password_verify($mypassword, $row["EMP_PW"]) == TRUE) {
+                    echo "password has successful";
                     $_SESSION['login_user'] = $myusername;
                     //if isadmin row is 1 then go to admin dashboard
                     if ($row["EMP_ISADMIN"]== "0"){
@@ -46,6 +47,6 @@
                     //echo "<h1>$sql</h1>";
                 }
         }
-      echo "$count";
+      //echo "$count";
     }
 ?>
