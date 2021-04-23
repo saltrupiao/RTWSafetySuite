@@ -26,7 +26,7 @@
         header("location: login.php");
     }
     $currentDate = date("Y-m-d");
-    $sqlTable = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_DATE_INSERT = '$currentDate'";
+    $sqlTable = "SELECT * FROM emp_symptoms WHERE EMP_DATE_INSERT = '$currentDate'";
     $resultTable = $conn->query($sqlTable);
 ?>
     <!DOCTYPE html>
@@ -105,7 +105,7 @@
                                     while ($rowTable = $resultTable->fetch_assoc()) {
                                         $empID = $rowTable['EMP_ID'];
                                         $name = "";
-                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID";
+                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM employee WHERE EMP_ID = $empID";
                                         $resultFLName = $conn->query($sqlFLName);
                                         while ($rowFLName = $resultFLName->fetch_assoc()) {
                                             $empFname = $rowFLName['EMP_FNAME'];
@@ -174,7 +174,7 @@
                                     <tr>
                                         <td>Non-Cleared Employees</td>
                                         <?php
-                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = 'NO' GROUP by EMP_STATUS";
+                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM employee WHERE EMP_STATUS = 'NO' GROUP by EMP_STATUS";
                                         $resultGetNOCount = $conn->query($sqlGetNOCount);
                                         while ($rowGetNOCount = $resultGetNOCount -> fetch_row()) {
                                             echo "<td>" . $rowGetNOCount[1] . "</td>";
@@ -184,7 +184,7 @@
                                     <tr>
                                         <td>Cleared Employees</td>
                                         <?php
-                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = 'OK' GROUP by EMP_STATUS";
+                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM employee WHERE EMP_STATUS = 'OK' GROUP by EMP_STATUS";
                                         $resultGetNOCount = $conn->query($sqlGetNOCount);
                                         while ($rowGetNOCount = $resultGetNOCount -> fetch_row()) {
                                             echo "<td>" . $rowGetNOCount[1] . "</td>";
@@ -194,7 +194,7 @@
                                     <!--<tr>
                                         <td>Employees With No Submission</td>
                                         <?php
-                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM EMPLOYEE WHERE EMP_STATUS = NULL GROUP by EMP_STATUS";
+                                        $sqlGetNOCount = "SELECT EMP_STATUS, count(EMP_STATUS) FROM employee WHERE EMP_STATUS = NULL GROUP by EMP_STATUS";
                                         $resultGetNOCount = $conn->query($sqlGetNOCount);
                                         while ($rowGetNOCount = $resultGetNOCount -> fetch_row()) {
                                             echo "<td>" . $rowGetNOCount[1] . "</td>";

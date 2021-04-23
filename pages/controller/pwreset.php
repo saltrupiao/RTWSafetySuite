@@ -24,7 +24,7 @@
     $hash = password_hash($newpw,PASSWORD_DEFAULT);
     $hashednewpass = $hash;
     //updating based off emp_id number not user id
-    $sql = "UPDATE EMPLOYEE SET EMP_PW = '$hashednewpass' WHERE EMP_ID = '$emp_id'";
+    $sql = "UPDATE employee SET EMP_PW = '$hashednewpass' WHERE EMP_ID = '$emp_id'";
     $result = mysqli_query($conn,$sql);
 if ($result == TRUE)
 {

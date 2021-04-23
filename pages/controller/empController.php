@@ -45,17 +45,17 @@
         echo "<h2>Exposed to COVID: $exposure</h2>";
         echo "<h2>Employee Electronic Signature: $signatureBox</h2>";
 
-        $sqlGetID = "SELECT EMP_ID FROM EMPLOYEE WHERE EMP_USERID = '$currentUser'";
+        $sqlGetID = "SELECT EMP_ID FROM employee WHERE EMP_USERID = '$currentUser'";
         $resultGetID = mysqli_query($conn,$sqlGetID);
         $row = mysqli_fetch_array($resultGetID,MYSQLI_ASSOC);
         $currentEmpID = $row['EMP_ID'];
         echo "<h1>Current Employee ID: $currentEmpID</h1>";
 
-        $sqlCheckEntries = "SELECT * FROM EMP_SYMPTOMS WHERE EMP_ID = '$currentEmpID' AND EMP_DATE_INSERT = '$currentDate'";
+        $sqlCheckEntries = "SELECT * FROM emp_symptoms WHERE EMP_ID = '$currentEmpID' AND EMP_DATE_INSERT = '$currentDate'";
         echo "<h1>" . $sqlCheckEntries . "</h1>";
         $resultCheckEntries = $conn->query($sqlCheckEntries);
 
-        $sqlInsert = "INSERT INTO `EMP_SYMPTOMS` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`, `EMP_SIGNATURE`) 
+        $sqlInsert = "INSERT INTO `emp_symptoms` (`EMP_SYMP_ID`, `EMP_ID`, `EMP_DATE_INSERT`, `SYMP_COUGH`, `SYMP_BREATH`, `SYMP_FEAVER`, `SYMP_FATIGUE`, `SYMP_ACHES`, `SYMP_HEADACHE`, `SYMP_TS`, `SYMP_STHROAT`, `SYMP_CONGEST`, `SYMP_NAUS`, `SYMP_DIARRHEA`, `SYMP_COVIDPOS`, `SYMP_COVIDEXPOS`, `SYMP_WTEST`, `EMP_SIGNATURE`) 
                                               VALUES (NULL, '$currentEmpID', '$currentDate', '$cough', '$breath', '$fever', NULL, '$aches', '$headache', '$tasteSmell', '$soreThroat', '$congest', '$nausea', '$d', '$covidPositive', '$exposure', NULL, '$signatureBox')";
 
         //Source: https://www.w3schools.com/php/php_mysql_insert.asp
@@ -116,7 +116,7 @@
             $status = 'OK';
             echo 'You are safe to enter!';
         }
-        $sqlInsertStatus = "UPDATE `EMPLOYEE` SET `EMP_STATUS` = '$status' WHERE `EMPLOYEE`.`EMP_ID` = $currentEmpID";
+        $sqlInsertStatus = "UPDATE `employee` SET `EMP_STATUS` = '$status' WHERE `employee`.`EMP_ID` = $currentEmpID";
         //Source: https://www.w3schools.com/php/php_mysql_insert.asp
         if ($conn->query($sqlInsertStatus) === TRUE) {
             echo "New record inserted successfully.";

@@ -13,7 +13,7 @@
         $empID = $_POST['empID'];
         echo "<h1>".$empID."</h1>";
 
-        $sqlGetStatus = "SELECT EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = '$empID'";
+        $sqlGetStatus = "SELECT EMP_STATUS FROM employee WHERE EMP_ID = '$empID'";
         $resultGetStatus = $conn->query($sqlGetStatus);
 
         while ($rowGetStatus = $resultGetStatus -> fetch_row()) {
@@ -34,7 +34,7 @@
             echo "<h1>" . $newStatus . "</h1>";
         }
 
-        $sqlSwitchStatus = "UPDATE EMPLOYEE SET EMP_STATUS = '$newStatus' WHERE EMPLOYEE.EMP_ID = $empID";
+        $sqlSwitchStatus = "UPDATE employee SET EMP_STATUS = '$newStatus' WHERE employee.EMP_ID = $empID";
         echo "<h1>" . $sqlSwitchStatus . "</h1>";
 
         if ($conn->query($sqlSwitchStatus) === TRUE) {

@@ -13,7 +13,7 @@
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
 
     //selecting the is admin
-    $sql = "SELECT EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$adminuser'";
+    $sql = "SELECT EMP_ISADMIN FROM employee WHERE EMP_USERID = '$adminuser'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $active = $row['active'];
@@ -54,9 +54,9 @@ else{
             </section>
             <?php
             //selecting all records
-        $sql2 = "SELECT * FROM EMPLOYEE";
+        $sql2 = "SELECT * FROM employee";
         //selecting all departments
-        $sql3 = "SELECT * FROM DEPARTMENTS";
+        $sql3 = "SELECT * FROM departments";
         
         $result2 = mysqli_query($conn,$sql2);
         $result3 = mysqli_query($conn,$sql3);

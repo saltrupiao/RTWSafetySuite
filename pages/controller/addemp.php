@@ -39,7 +39,7 @@ $serverName = "localhost";
            $type = '0';
        }
       //query to add an employee
-      $sql = "INSERT INTO EMPLOYEE (EMP_FNAME, EMP_LNAME, EMP_USERID, EMP_DEPT, EMP_PW, EMP_ISADMIN) VALUES ('$fname', '$lname', '$uname', '$dept', '$hashpass', '$type')";
+      $sql = "INSERT INTO employee (EMP_FNAME, EMP_LNAME, EMP_USERID, EMP_DEPT, EMP_PW, EMP_ISADMIN) VALUES ('$fname', '$lname', '$uname', '$dept', '$hashpass', '$type')";
        if ($conn->query ($sql) == TRUE) {
             //if successful new employee shows up in table 
            header("location:../admin_manage.php");

@@ -8,7 +8,7 @@
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
     //grabs dept selection from dropdown menu in emp table
     $dept = mysqli_real_escape_string($conn,$_POST['adddept']);
-    $sql = "INSERT INTO DEPARTMENTS (DEPARTMENT_NAME) VALUES ('$dept') ";
+    $sql = "INSERT INTO departments (DEPARTMENT_NAME) VALUES ('$dept') ";
     $result = mysqli_query($conn,$sql);
 if ($result == TRUE)
 {

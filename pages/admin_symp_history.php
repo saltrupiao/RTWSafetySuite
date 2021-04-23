@@ -13,7 +13,7 @@
     $conn = mysqli_connect($serverName, $userName , $password, $dbName);
 
     //selecting the is admin
-    $sql = "SELECT EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$adminuser'";
+    $sql = "SELECT EMP_ISADMIN FROM employee WHERE EMP_USERID = '$adminuser'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $active = $row['active'];
@@ -26,10 +26,10 @@
         header("location: login.php");
     }
     $currentDate = date("Y-m-d");
-    $sqlTable = "SELECT * FROM EMP_SYMPTOMS";
+    $sqlTable = "SELECT * FROM emp_symptoms";
     $resultTable = $conn->query($sqlTable);
     //gettig employee names for table filter
-    $sql3 = "SELECT EMP_FNAME, EMP_LNAME FROM EMPLOYEE";
+    $sql3 = "SELECT EMP_FNAME, EMP_LNAME FROM employee";
     $result3 = mysqli_query($conn,$sql3);
 ?>
     <!DOCTYPE html>
@@ -226,7 +226,7 @@
                                     while ($rowTable = $resultTable->fetch_assoc()) {
                                         $empID = $rowTable['EMP_ID'];
                                         $name = "";
-                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID";
+                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM employee WHERE EMP_ID = $empID";
                                         $resultFLName = $conn->query($sqlFLName);
                                         while ($rowFLName = $resultFLName->fetch_assoc()) {
                                             $empFname = $rowFLName['EMP_FNAME'];

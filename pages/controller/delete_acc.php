@@ -11,9 +11,9 @@ $conn = mysqli_connect($serverName, $userName , $password, $dbName);
 $id = mysqli_real_escape_string($conn,$_POST['id']);
 $employee_user = mysqli_real_escape_string($conn,$_POST['emp_user']);
 //query to delete row of user in symptom table to delete the foreign key
-$sql = "DELETE FROM EMP_SYMPTOMS WHERE EMP_ID = '$id'";
+$sql = "DELETE FROM emp_sysptoms WHERE EMP_ID = '$id'";
 //query to delete the employee based on primary key
-$sql2 = "DELETE FROM EMPLOYEE WHERE EMP_ID = '$id'";
+$sql2 = "DELETE FROM employee WHERE EMP_ID = '$id'";
 $result = mysqli_query($conn,$sql);
 $result2 = mysqli_query($conn,$sql2);
 if ($result == TRUE && $result2 == TRUE )

@@ -13,7 +13,7 @@ $dbName = "rtwdb";
 $conn = mysqli_connect($serverName, $userName , $password, $dbName);
 
 //selecting the is admin
-$sql = "SELECT EMP_ISADMIN FROM EMPLOYEE WHERE EMP_USERID = '$adminuser'";
+$sql = "SELECT EMP_ISADMIN FROM employee WHERE EMP_USERID = '$adminuser'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 $active = $row['active'];
@@ -26,7 +26,7 @@ if($row["EMP_ISADMIN"] == "1"){
     header("location: login.php");
 }
 
-$sqlTable = "SELECT * FROM EMP_SYMPTOMS";
+$sqlTable = "SELECT * FROM emp_symptom";
 $resultTable = $conn->query($sqlTable);
 
 ?>
@@ -95,7 +95,7 @@ $resultTable = $conn->query($sqlTable);
                                         $empID = $rowTable['EMP_ID'];
                                         $name = "";
 
-                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM EMPLOYEE WHERE EMP_ID = $empID";
+                                        $sqlFLName = "SELECT EMP_FNAME, EMP_LNAME, EMP_STATUS FROM employee WHERE EMP_ID = $empID";
                                         $resultFLName = $conn->query($sqlFLName);
                                         while ($rowFLName = $resultFLName->fetch_assoc()) {
                                             $empFname = $rowFLName['EMP_FNAME'];
