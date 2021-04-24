@@ -1,0 +1,4 @@
+Project References:
+PyImageSearch/Adrian Rosebrock; OpenCV Social Distancing Detector: https://www.pyimagesearch.com/2020/06/01/opencv-social-distancing-detector/
+VLC Recording Command: https://unix.stackexchange.com/questions/58526/trouble-getting-vlc-to-record-from-the-webcam-via-command-line
+MySQL DB Connection Logic: https://www.w3schools.com/php/php_mysql_insert.asp

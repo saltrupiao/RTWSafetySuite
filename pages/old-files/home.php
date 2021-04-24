@@ -26,5 +26,5 @@ if($row["EMP_ISADMIN"] == "0"){
 //html 
 echo "<br>Welcome to COVID Safety Suite";
 echo "<br>";
-echo "<a href=controller/logout.php>Logout</a>";
+echo "<a href=../controller/logout.php>Logout</a>";
 ?>
