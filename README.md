@@ -2,7 +2,7 @@
 A comprehensive, multi-modular product suite designed to keep workers safe when a company returns to the office after the COVID-19 pandemic. The first module is a web-based symptom reporting dashboard, as well as an administrative team dashboard to monitor, report, and take appropriate action. The second module is on-site hardware with a distance tracking algorithm implemented form a third party for our use case.
 
 ## Authors
-Travis Thayer & Sal Trupiano
+Rayvin Benno, Conner Lee, Michael Reed, Carmia Smith, Sal Trupiano
 
 ## Project Demonstration Video
 For a demonstration of this proejct in action, please view this YouTube video: https://www.youtube.com/watch?v=j49Ge-rbzWY
